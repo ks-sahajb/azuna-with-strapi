@@ -56,6 +56,20 @@ export interface BlocksNavbar extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksServices extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_services';
+  info: {
+    description: '';
+    displayName: 'Services';
+  };
+  attributes: {
+    badge: Schema.Attribute.Component<'elements.badge', false>;
+    description: Schema.Attribute.Text;
+    services: Schema.Attribute.Component<'elements.servicecard', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface ElementsBadge extends Struct.ComponentSchema {
   collectionName: 'components_elements_badges';
   info: {
@@ -63,6 +77,29 @@ export interface ElementsBadge extends Struct.ComponentSchema {
   };
   attributes: {
     text: Schema.Attribute.String;
+  };
+}
+
+export interface ElementsIcons extends Struct.ComponentSchema {
+  collectionName: 'components_elements_icons';
+  info: {
+    description: '';
+    displayName: 'icons';
+  };
+  attributes: {
+    icon: Schema.Attribute.Enumeration<
+      ['code', 'shopping_bag', 'smartphone', 'aperture', 'layers', 'setting']
+    >;
+  };
+}
+
+export interface ElementsItem extends Struct.ComponentSchema {
+  collectionName: 'components_elements_items';
+  info: {
+    displayName: 'item';
+  };
+  attributes: {
+    text: Schema.Attribute.Text;
   };
 }
 
@@ -88,6 +125,20 @@ export interface ElementsLogo extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsServicecard extends Struct.ComponentSchema {
+  collectionName: 'components_elements_servicecards';
+  info: {
+    description: '';
+    displayName: 'servicecard';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    icon: Schema.Attribute.Component<'elements.icons', false>;
+    items: Schema.Attribute.Component<'elements.item', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -95,9 +146,13 @@ declare module '@strapi/strapi' {
       'blocks.footer': BlocksFooter;
       'blocks.hero-section': BlocksHeroSection;
       'blocks.navbar': BlocksNavbar;
+      'blocks.services': BlocksServices;
       'elements.badge': ElementsBadge;
+      'elements.icons': ElementsIcons;
+      'elements.item': ElementsItem;
       'elements.link': ElementsLink;
       'elements.logo': ElementsLogo;
+      'elements.servicecard': ElementsServicecard;
     }
   }
 }
