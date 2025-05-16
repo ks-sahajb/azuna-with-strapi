@@ -1,5 +1,5 @@
 import qs from "qs";
-import { getStrapiURL } from "./api-helper";
+import { getStrapiURL } from "../utils/api-helper";
 import { IApiResponse } from "./dtos/shared-component.type";
 
 export class FetchAPIClient {
