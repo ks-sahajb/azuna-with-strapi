@@ -11,6 +11,14 @@ const queryObj = {
         "blocks.navbar": {
           populate: "*",
         },
+        "blocks.services": {
+          populate: {
+            badge: true,
+            services: {
+              populate: "*",
+            },
+          },
+        },
       },
     },
   },
@@ -21,4 +29,3 @@ export async function getHomePage() {
 
   return api.get<IHomePageData>("/home-page", queryObj);
 }
-

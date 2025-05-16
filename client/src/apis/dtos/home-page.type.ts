@@ -1,5 +1,11 @@
 import { Base, IBlocks } from "./blocks-renderer.type";
-import { IBadge, IButton, IStrapiImage } from "./shared-component.type";
+import {
+  IBadge,
+  IButton,
+  IIcon,
+  IItems,
+  IStrapiImage,
+} from "./shared-component.type";
 
 export type IHomePageData = {
   id: number;
@@ -16,4 +22,20 @@ export type IHeroSection = Base<"blocks.hero-section"> & {
   image: IStrapiImage;
   badge: IBadge;
   button: IButton[];
+};
+
+export type IService = {
+  id: number;
+  title: string;
+  description: string;
+  icon: IIcon;
+  items: IItems[];
+};
+
+export type IServicesSection = Base<"blocks.services"> & {
+  id: number;
+  title: string;
+  description: string;
+  badge: IBadge;
+  services: IService[];
 };

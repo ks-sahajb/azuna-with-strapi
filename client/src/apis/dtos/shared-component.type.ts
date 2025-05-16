@@ -1,3 +1,5 @@
+import { IIconName } from "@/components/atoms/icons/icons";
+
 export type IImageFormat = {
   name: string;
   hash: string;
@@ -68,7 +70,16 @@ export type IContact = {
   mobile: string;
 };
 
+export type IItems = {
+  id: number;
+  text: string;
+};
+
 export type IApiResponse<T> = {
   data: T;
   meta: Record<string, unknown>;
+};
+
+export type IIcon = {
+  icon: IIconName;
 };

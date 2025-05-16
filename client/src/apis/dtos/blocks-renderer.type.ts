@@ -1,8 +1,8 @@
-import { IHeroSection } from "./home-page.type";
+import { IHeroSection, IServicesSection } from "./home-page.type";
 
-export type IComponentType = "blocks.hero-section";
+export type IComponentType = "blocks.hero-section" | "blocks.services";
 
-export type IBlocks = IHeroSection;
+export type IBlocks = IHeroSection | IServicesSection;
 
 export type Base<
   T extends IComponentType,

@@ -1,4 +1,4 @@
-import { getStrapiMedia } from "@/apis/api-helper";
+import { getStrapiMedia } from "@/utils/api-helper";
 import { IStrapiImage } from "@/apis/dtos/shared-component.type";
 import Image from "next/image";
 import React, { FC } from "react";
