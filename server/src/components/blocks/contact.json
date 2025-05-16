@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_blocks_contacts",
+  "info": {
+    "displayName": "contact"
+  },
+  "options": {},
+  "attributes": {
+    "mobile": {
+      "type": "string"
+    },
+    "address": {
+      "type": "text"
+    },
+    "email": {
+      "type": "email"
+    }
+  }
+}
