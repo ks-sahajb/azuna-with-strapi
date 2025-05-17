@@ -39,3 +39,19 @@ export type IServicesSection = Base<"blocks.services"> & {
   badge: IBadge;
   services: IService[];
 };
+
+export type IReview = {
+  id: number;
+  author: string;
+  company: string;
+  profile?: IStrapiImage;
+  text: string;
+};
+
+export type ITestimonialsSection = Base<"blocks.testimonials"> & {
+  id: number;
+  title: string;
+  description: string;
+  badge: IBadge;
+  reviews: IReview[];
+};

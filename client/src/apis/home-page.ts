@@ -19,6 +19,14 @@ const queryObj = {
             },
           },
         },
+        "blocks.testimonials": {
+          populate: {
+            badge: true,
+            reviews: {
+              populate: "*",
+            },
+          },
+        },
       },
     },
   },
