@@ -9,7 +9,14 @@ const queryObj = {
           populate: "*",
         },
         "blocks.footer": {
-          populate: "*",
+          populate: {
+            links: true,
+            externallinks: {
+              populate: "*",
+            },
+            logo: true,
+            contact: true,
+          },
         },
       },
     },

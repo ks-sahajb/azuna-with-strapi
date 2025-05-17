@@ -33,7 +33,9 @@ const Footer: FC<IFooterProps> = (props) => {
               {externallinks.map((link) => (
                 <BaseLink
                   href={link.href}
+                  icon={link.icon}
                   key={link.id}
+                  contentType="icon"
                   className="text-gray-400 transition-colors hover:text-white"
                 >
                   {link.text}

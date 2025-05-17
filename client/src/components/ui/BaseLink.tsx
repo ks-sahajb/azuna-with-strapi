@@ -1,7 +1,9 @@
+import { ILink } from "@/apis/dtos/shared-component.type";
 import { cva, VariantProps } from "class-variance-authority";
 import clsx from "clsx";
 import Link, { LinkProps } from "next/link";
 import { AnchorHTMLAttributes, FC } from "react";
+import IconRenderer from "../atoms/icons/IconRenderer";
 
 const linkCVA = cva("", {
   variants: {
@@ -16,15 +18,28 @@ const linkCVA = cva("", {
 export type IBaseLinkCVA = VariantProps<typeof linkCVA>;
 
 export type IBaseLinkProps = LinkProps &
+  Partial<ILink> &
   IBaseLinkCVA &
-  AnchorHTMLAttributes<HTMLAnchorElement>;
+  AnchorHTMLAttributes<HTMLAnchorElement> & {
+    contentType?: "text" | "icon";
+  };
 
 const BaseLink: FC<IBaseLinkProps> = (props) => {
-  const { className, children, intent, ...other } = props;
+  const { className, children, intent, icon, contentType, ...other } = props;
 
   return (
     <Link className={clsx(linkCVA({ intent }), className)} {...other}>
-      {children}
+      {contentType === "text" && children && children}
+      {contentType === "icon" && icon && <IconRenderer name={icon?.icon} />}
+      {!contentType &&
+        (icon ? (
+          <>
+            <IconRenderer name={icon.icon} />
+            {children}
+          </>
+        ) : (
+          children
+        ))}
     </Link>
   );
 };

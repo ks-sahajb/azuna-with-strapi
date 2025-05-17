@@ -57,6 +57,7 @@ export type ILink = {
   id: number;
   text: string;
   href: string;
+  icon?: IIcon;
 };
 
 export type ILogo = {
