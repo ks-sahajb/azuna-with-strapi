@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_blocks_testimonials",
+  "info": {
+    "displayName": "Testimonials",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "badge": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.badge"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "reviews": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.review"
+    }
+  }
+}

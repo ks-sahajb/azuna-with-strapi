@@ -22,11 +22,12 @@ export interface BlocksFooter extends Struct.ComponentSchema {
     contact: Schema.Attribute.Component<'blocks.contact', false>;
     copyright: Schema.Attribute.String;
     ctitle: Schema.Attribute.String;
-    description: Schema.Attribute.Text;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
     externallinks: Schema.Attribute.Component<'elements.link', true>;
     links: Schema.Attribute.Component<'elements.link', true>;
     linktitle: Schema.Attribute.String;
-    logo: Schema.Attribute.Component<'elements.logo', false>;
+    logo: Schema.Attribute.Component<'elements.logo', false> &
+      Schema.Attribute.Required;
   };
 }
 
@@ -70,6 +71,20 @@ export interface BlocksServices extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksTestimonials extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_testimonials';
+  info: {
+    description: '';
+    displayName: 'Testimonials';
+  };
+  attributes: {
+    badge: Schema.Attribute.Component<'elements.badge', false>;
+    description: Schema.Attribute.Text;
+    reviews: Schema.Attribute.Component<'elements.review', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface ElementsBadge extends Struct.ComponentSchema {
   collectionName: 'components_elements_badges';
   info: {
@@ -88,7 +103,18 @@ export interface ElementsIcons extends Struct.ComponentSchema {
   };
   attributes: {
     icon: Schema.Attribute.Enumeration<
-      ['code', 'shopping_bag', 'smartphone', 'aperture', 'layers', 'setting']
+      [
+        'code',
+        'shopping_bag',
+        'smartphone',
+        'aperture',
+        'layers',
+        'setting',
+        'star',
+        'facebook',
+        'linkedin',
+        'instagram',
+      ]
     >;
   };
 }
@@ -106,11 +132,13 @@ export interface ElementsItem extends Struct.ComponentSchema {
 export interface ElementsLink extends Struct.ComponentSchema {
   collectionName: 'components_elements_links';
   info: {
+    description: '';
     displayName: 'Link';
   };
   attributes: {
-    href: Schema.Attribute.String;
-    text: Schema.Attribute.String;
+    href: Schema.Attribute.String & Schema.Attribute.Required;
+    icon: Schema.Attribute.Component<'elements.icons', false>;
+    text: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -122,6 +150,20 @@ export interface ElementsLogo extends Struct.ComponentSchema {
   attributes: {
     image: Schema.Attribute.Media<'images'>;
     text: Schema.Attribute.String;
+  };
+}
+
+export interface ElementsReview extends Struct.ComponentSchema {
+  collectionName: 'components_elements_reviews';
+  info: {
+    description: '';
+    displayName: 'review';
+  };
+  attributes: {
+    author: Schema.Attribute.String;
+    company: Schema.Attribute.Text;
+    profile: Schema.Attribute.Media<'images' | 'files'>;
+    text: Schema.Attribute.Text;
   };
 }
 
@@ -147,11 +189,13 @@ declare module '@strapi/strapi' {
       'blocks.hero-section': BlocksHeroSection;
       'blocks.navbar': BlocksNavbar;
       'blocks.services': BlocksServices;
+      'blocks.testimonials': BlocksTestimonials;
       'elements.badge': ElementsBadge;
       'elements.icons': ElementsIcons;
       'elements.item': ElementsItem;
       'elements.link': ElementsLink;
       'elements.logo': ElementsLogo;
+      'elements.review': ElementsReview;
       'elements.servicecard': ElementsServicecard;
     }
   }
