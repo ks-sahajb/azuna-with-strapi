@@ -3,12 +3,28 @@ import type { Schema, Struct } from '@strapi/strapi';
 export interface BlocksContact extends Struct.ComponentSchema {
   collectionName: 'components_blocks_contacts';
   info: {
+    description: '';
     displayName: 'contact';
   };
   attributes: {
     address: Schema.Attribute.Text;
     email: Schema.Attribute.Email;
+    icon: Schema.Attribute.Component<'elements.icons', false>;
     mobile: Schema.Attribute.String;
+  };
+}
+
+export interface BlocksCta extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_ctas';
+  info: {
+    description: '';
+    displayName: 'CTA';
+  };
+  attributes: {
+    badge: Schema.Attribute.Component<'elements.badge', false>;
+    contact: Schema.Attribute.Component<'blocks.contact', false>;
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -185,6 +201,7 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'blocks.contact': BlocksContact;
+      'blocks.cta': BlocksCta;
       'blocks.footer': BlocksFooter;
       'blocks.hero-section': BlocksHeroSection;
       'blocks.navbar': BlocksNavbar;
