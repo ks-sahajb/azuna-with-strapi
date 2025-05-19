@@ -1,0 +1,16 @@
+version: "3"
+
+vars:
+  BACKUP_SRC: "strapi-backups"
+  BACKUP_DEST: "../../backups"
+
+tasks:
+  backup:
+    desc: "Backup strapi-backups folder to destination"
+    cmds:
+      - |
+        echo "Starting backup of '{{.BACKUP_SRC}}' to '{{.BACKUP_DEST}}'..."
+        mkdir -p "{{.BACKUP_DEST}}"
+        # Copy with rsync to preserve timestamps, permissions, etc.
+        rsync -av --delete "{{.BACKUP_SRC}}/" "{{.BACKUP_DEST}}/"
+        echo "Backup completed."

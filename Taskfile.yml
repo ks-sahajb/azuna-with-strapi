@@ -1,0 +1,38 @@
+version: "3"
+
+vars:
+  BACKUP_DIR: "strapi-backups"
+  STRAPI_DIR: "server"
+
+tasks:
+  export:
+    desc: Export current Strapi data
+    cmds:
+      - |
+        current_branch=$(git rev-parse --abbrev-ref HEAD)
+        # Replace '/' with '-' in branch name
+        safe_branch=$(echo "$current_branch" | sed 's/\//-/g')
+        export_dir={{.BACKUP_DIR}}/$safe_branch
+        mkdir -p "$export_dir"
+        echo "Exporting Strapi data for branch: $current_branch (sanitized: $safe_branch) → $export_dir/export.tar.gz"
+        date > "$export_dir/date.txt"
+        cd {{.STRAPI_DIR}}
+        npm run strapi export -- --file "../$export_dir/export" --no-encrypt
+
+  import:
+    desc: Import Strapi data for given branch
+    cmds:
+      - |
+        import_branch="{{.IMPORT_FROM_BRANCH}}"
+        # Replace '/' with '-' in branch name
+        import_branch_safe=$(echo "$import_branch" | sed 's/\//-/g')
+        import_dir="{{.BACKUP_DIR}}/$import_branch_safe"
+        import_file="$import_dir/export.tar.gz"
+        echo "$import_file --- $import_dir --- $import_branch_safe"
+        if [ -f "$import_file" ]; then
+          echo "Importing Strapi data for branch: $import_branch ← $import_file"
+          cd {{.STRAPI_DIR}}
+          npx strapi import -f "../$import_file" --force
+        else
+          echo "No backup found for branch: $import_branch. Skipping import."
+        fi
