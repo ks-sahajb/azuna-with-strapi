@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_elements_history_items",
+  "info": {
+    "displayName": "TimelineItem",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "year": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.icons"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_blocks_history_tabs",
+  "info": {
+    "displayName": "HistoryTab"
+  },
+  "options": {},
+  "attributes": {
+    "Tab": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.tab"
+    },
+    "Timeline": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.history-item"
+    }
+  }
+}

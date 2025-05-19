@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_blocks_team_tabs",
+  "info": {
+    "displayName": "TeamTab",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Tab": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.tab"
+    },
+    "Members": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.member"
+    }
+  }
+}
