@@ -17,7 +17,8 @@
       "components": [
         "blocks.hero-section",
         "blocks.services",
-        "blocks.testimonials"
+        "blocks.testimonials",
+        "blocks.cta"
       ]
     }
   }

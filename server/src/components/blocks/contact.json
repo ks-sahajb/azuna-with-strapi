@@ -1,7 +1,8 @@
 {
   "collectionName": "components_blocks_contacts",
   "info": {
-    "displayName": "contact"
+    "displayName": "contact",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -13,6 +14,11 @@
     },
     "email": {
       "type": "email"
+    },
+    "icon": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.icons"
     }
   }
 }
