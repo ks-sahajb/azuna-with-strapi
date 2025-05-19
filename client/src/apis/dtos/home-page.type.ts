@@ -2,6 +2,7 @@ import { Base, IBlocks } from "./blocks-renderer.type";
 import {
   IBadge,
   IButton,
+  IContact,
   IIcon,
   IItems,
   IStrapiImage,
@@ -54,4 +55,12 @@ export type ITestimonialsSection = Base<"blocks.testimonials"> & {
   description: string;
   badge: IBadge;
   reviews: IReview[];
+};
+
+export type ICTASection = Base<"blocks.cta"> & {
+  id: number;
+  title: string;
+  description: string;
+  badge: IBadge;
+  contact: IContact;
 };

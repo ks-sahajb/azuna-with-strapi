@@ -27,6 +27,9 @@ const queryObj = {
             },
           },
         },
+        "blocks.cta": {
+          populate: "*",
+        },
       },
     },
   },

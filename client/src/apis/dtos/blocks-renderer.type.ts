@@ -1,4 +1,5 @@
 import {
+  ICTASection,
   IHeroSection,
   IServicesSection,
   ITestimonialsSection,
@@ -7,9 +8,14 @@ import {
 export type IComponentType =
   | "blocks.hero-section"
   | "blocks.services"
-  | "blocks.testimonials";
+  | "blocks.testimonials"
+  | "blocks.cta";
 
-export type IBlocks = IHeroSection | IServicesSection | ITestimonialsSection;
+export type IBlocks =
+  | IHeroSection
+  | IServicesSection
+  | ITestimonialsSection
+  | ICTASection;
 
 export type Base<
   T extends IComponentType,

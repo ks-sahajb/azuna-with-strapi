@@ -11,6 +11,9 @@ export const iconLoader = {
   aperture: loadIcon("Aperture"),
   layers: loadIcon("Layers"),
   setting: loadIcon("Settings"),
+  facebook: loadIcon("Facebook"),
+  instagram: loadIcon("Instagram"),
+  star: loadIcon("Star"),
 } as const;
 
 export type IIconName = keyof typeof iconLoader;
