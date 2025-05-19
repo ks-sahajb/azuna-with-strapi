@@ -1,13 +1,13 @@
 import { IBlocks } from "@/apis/dtos/blocks-renderer.type";
-import HeroSection from "./home/HeroSection";
+import BaseHeroSection from "./BaseHeroSection";
+import CtaSection from "./home/CtaSection";
 import ServiceSection from "./home/ServiceSection";
 import Testimonials from "./home/Testimonials";
-import CtaSection from "./home/CtaSection";
 
 function blockRenderer(block: IBlocks, index: number) {
   switch (block.__component) {
     case "blocks.hero-section":
-      return <HeroSection data={block} key={index} />;
+      return <BaseHeroSection data={block} key={index} />;
     case "blocks.services":
       return <ServiceSection data={block} key={index} />;
     case "blocks.testimonials":
