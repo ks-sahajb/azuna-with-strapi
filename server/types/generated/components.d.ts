@@ -62,6 +62,30 @@ export interface BlocksHeroSection extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksHistoryTab extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_history_tabs';
+  info: {
+    displayName: 'HistoryTab';
+  };
+  attributes: {
+    Tab: Schema.Attribute.Component<'blocks.tab', false>;
+    Timeline: Schema.Attribute.Component<'elements.history-item', true>;
+  };
+}
+
+export interface BlocksMissonTab extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_misson_tabs';
+  info: {
+    description: '';
+    displayName: 'MissionTab';
+  };
+  attributes: {
+    Features: Schema.Attribute.Component<'elements.feature', true>;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Tab: Schema.Attribute.Component<'blocks.tab', false>;
+  };
+}
+
 export interface BlocksNavbar extends Struct.ComponentSchema {
   collectionName: 'components_blocks_navbars';
   info: {
@@ -84,6 +108,30 @@ export interface BlocksServices extends Struct.ComponentSchema {
     description: Schema.Attribute.Text;
     services: Schema.Attribute.Component<'elements.servicecard', true>;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface BlocksTab extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_tabs';
+  info: {
+    displayName: 'tab';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface BlocksTeamTab extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_team_tabs';
+  info: {
+    description: '';
+    displayName: 'TeamTab';
+  };
+  attributes: {
+    Members: Schema.Attribute.Component<'elements.member', true>;
+    Tab: Schema.Attribute.Component<'blocks.tab', false>;
   };
 }
 
@@ -111,6 +159,32 @@ export interface ElementsBadge extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsFeature extends Struct.ComponentSchema {
+  collectionName: 'components_elements_features';
+  info: {
+    displayName: 'Feature';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    icon: Schema.Attribute.Component<'elements.icons', false>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface ElementsHistoryItem extends Struct.ComponentSchema {
+  collectionName: 'components_elements_history_items';
+  info: {
+    description: '';
+    displayName: 'TimelineItem';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    icon: Schema.Attribute.Component<'elements.icons', false>;
+    title: Schema.Attribute.String;
+    year: Schema.Attribute.String;
+  };
+}
+
 export interface ElementsIcons extends Struct.ComponentSchema {
   collectionName: 'components_elements_icons';
   info: {
@@ -130,6 +204,12 @@ export interface ElementsIcons extends Struct.ComponentSchema {
         'facebook',
         'linkedin',
         'instagram',
+        'framer',
+        'shield',
+        'users',
+        'award',
+        'globe',
+        'watch',
       ]
     >;
   };
@@ -169,6 +249,20 @@ export interface ElementsLogo extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsMember extends Struct.ComponentSchema {
+  collectionName: 'components_elements_members';
+  info: {
+    displayName: 'Member';
+  };
+  attributes: {
+    icon: Schema.Attribute.Component<'elements.icons', false>;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    info: Schema.Attribute.Text;
+    name: Schema.Attribute.String;
+    position: Schema.Attribute.String;
+  };
+}
+
 export interface ElementsReview extends Struct.ComponentSchema {
   collectionName: 'components_elements_reviews';
   info: {
@@ -204,14 +298,21 @@ declare module '@strapi/strapi' {
       'blocks.cta': BlocksCta;
       'blocks.footer': BlocksFooter;
       'blocks.hero-section': BlocksHeroSection;
+      'blocks.history-tab': BlocksHistoryTab;
+      'blocks.misson-tab': BlocksMissonTab;
       'blocks.navbar': BlocksNavbar;
       'blocks.services': BlocksServices;
+      'blocks.tab': BlocksTab;
+      'blocks.team-tab': BlocksTeamTab;
       'blocks.testimonials': BlocksTestimonials;
       'elements.badge': ElementsBadge;
+      'elements.feature': ElementsFeature;
+      'elements.history-item': ElementsHistoryItem;
       'elements.icons': ElementsIcons;
       'elements.item': ElementsItem;
       'elements.link': ElementsLink;
       'elements.logo': ElementsLogo;
+      'elements.member': ElementsMember;
       'elements.review': ElementsReview;
       'elements.servicecard': ElementsServicecard;
     }

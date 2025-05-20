@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_blocks_tabs",
+  "info": {
+    "displayName": "tab"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

@@ -20,9 +20,9 @@ export type IHomePageData = {
 export type IHeroSection = Base<"blocks.hero-section"> & {
   title: string;
   description: string;
-  image: IStrapiImage;
+  image?: IStrapiImage;
   badge: IBadge;
-  button: IButton[];
+  button?: IButton[];
 };
 
 export type IService = {

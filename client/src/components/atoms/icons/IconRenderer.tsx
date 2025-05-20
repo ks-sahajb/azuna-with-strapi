@@ -1,7 +1,10 @@
-import { Suspense, lazy } from "react";
+import { FC, Suspense } from "react";
 import { iconLoader, IIconName } from "./icons";
+import { IconProps } from "react-feather";
 
-const IconRenderer = ({ name }: { name: IIconName }) => {
+export type IIconRendererProps = { name: IIconName; iconProps?: IconProps };
+
+const IconRenderer: FC<IIconRendererProps> = ({ name, iconProps }) => {
   const CurrentIcon = iconLoader[name];
 
   if (!CurrentIcon) {
@@ -21,7 +24,7 @@ const IconRenderer = ({ name }: { name: IIconName }) => {
         <div className="w-[21px] h-[21px] animate-pulse bg-gray-300 rounded" />
       }
     >
-      <CurrentIcon size={21} />
+      <CurrentIcon size={21} {...iconProps} />
     </Suspense>
   );
 };

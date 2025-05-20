@@ -13,7 +13,14 @@ export const iconLoader = {
   setting: loadIcon("Settings"),
   facebook: loadIcon("Facebook"),
   instagram: loadIcon("Instagram"),
+  linkedin: loadIcon("Linkedin"),
   star: loadIcon("Star"),
+  framer: loadIcon("Framer"),
+  shield: loadIcon("Shield"),
+  users: loadIcon("Users"),
+  award: loadIcon("Award"),
+  globe: loadIcon("Globe"),
+  watch: loadIcon("Watch"),
 } as const;
 
 export type IIconName = keyof typeof iconLoader;

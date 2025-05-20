@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_elements_features",
+  "info": {
+    "displayName": "Feature"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "icon": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.icons"
+    }
+  }
+}

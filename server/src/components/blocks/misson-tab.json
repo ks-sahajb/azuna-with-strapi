@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_blocks_misson_tabs",
+  "info": {
+    "displayName": "MissionTab",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Tab": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.tab"
+    },
+    "Features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.feature"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}
