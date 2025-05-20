@@ -474,6 +474,53 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiProjectDetailProjectDetail
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'project_details';
+  info: {
+    description: '';
+    displayName: 'ProjectDetails';
+    pluralName: 'project-details';
+    singularName: 'project-detail';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    badge: Schema.Attribute.Component<'elements.badge', false>;
+    challenge: Schema.Attribute.Text;
+    client: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    gallary: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    hero_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::project-detail.project-detail'
+    > &
+      Schema.Attribute.Private;
+    project_id: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    results: Schema.Attribute.Component<'elements.tags', true>;
+    solution: Schema.Attribute.Text;
+    tags: Schema.Attribute.Component<'elements.tags', true>;
+    testimonial: Schema.Attribute.Component<'elements.review', false>;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    year: Schema.Attribute.String;
+  };
+}
+
 export interface ApiProjectsPageProjectsPage extends Struct.SingleTypeSchema {
   collectionName: 'projects_pages';
   info: {
@@ -1017,6 +1064,7 @@ declare module '@strapi/strapi' {
       'api::about-us.about-us': ApiAboutUsAboutUs;
       'api::global.global': ApiGlobalGlobal;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::project-detail.project-detail': ApiProjectDetailProjectDetail;
       'api::projects-page.projects-page': ApiProjectsPageProjectsPage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
