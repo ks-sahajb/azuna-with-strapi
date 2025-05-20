@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_elements_icons",
+  "info": {
+    "displayName": "icons",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "enumeration",
+      "enum": [
+        "code",
+        "shopping_bag",
+        "smartphone",
+        "aperture",
+        "layers",
+        "setting",
+        "star",
+        "facebook",
+        "linkedin",
+        "instagram"
+      ]
+    }
+  }
+}
