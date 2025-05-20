@@ -4,18 +4,21 @@ import {
   IServicesSection,
   ITestimonialsSection,
 } from "./home-page.type";
+import { IProject } from "./projects-page.type";
 
 export type IComponentType =
   | "blocks.hero-section"
   | "blocks.services"
   | "blocks.testimonials"
-  | "blocks.cta";
+  | "blocks.cta"
+  | "blocks.project-section";
 
 export type IBlocks =
   | IHeroSection
   | IServicesSection
   | ITestimonialsSection
-  | ICTASection;
+  | ICTASection
+  | IProject;
 
 export type Base<
   T extends IComponentType,

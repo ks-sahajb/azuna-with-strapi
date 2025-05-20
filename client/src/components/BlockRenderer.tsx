@@ -3,6 +3,7 @@ import BaseHeroSection from "./BaseHeroSection";
 import CtaSection from "./home/CtaSection";
 import ServiceSection from "./home/ServiceSection";
 import Testimonials from "./home/Testimonials";
+import ProjectsGrid from "./projects/ProjectsGrid";
 
 function blockRenderer(block: IBlocks, index: number) {
   switch (block.__component) {
@@ -14,7 +15,8 @@ function blockRenderer(block: IBlocks, index: number) {
       return <Testimonials data={block} key={index} />;
     case "blocks.cta":
       return <CtaSection data={block} key={index} />;
-
+    case "blocks.project-section":
+      return <ProjectsGrid data={block} key={index} />;
     default:
       return null;
   }

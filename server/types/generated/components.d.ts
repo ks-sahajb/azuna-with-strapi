@@ -97,6 +97,18 @@ export interface BlocksNavbar extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksProjectSection extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_project_sections';
+  info: {
+    description: '';
+    displayName: 'ProjectSection';
+  };
+  attributes: {
+    Projects: Schema.Attribute.Component<'elements.project-card', true> &
+      Schema.Attribute.Required;
+  };
+}
+
 export interface BlocksServices extends Struct.ComponentSchema {
   collectionName: 'components_blocks_services';
   info: {
@@ -263,6 +275,22 @@ export interface ElementsMember extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsProjectCard extends Struct.ComponentSchema {
+  collectionName: 'components_elements_project_cards';
+  info: {
+    description: '';
+    displayName: 'ProjectCard';
+  };
+  attributes: {
+    badge: Schema.Attribute.Component<'elements.badge', false>;
+    button: Schema.Attribute.Component<'elements.link', false>;
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    tags: Schema.Attribute.Component<'elements.tags', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface ElementsReview extends Struct.ComponentSchema {
   collectionName: 'components_elements_reviews';
   info: {
@@ -291,6 +319,17 @@ export interface ElementsServicecard extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsTags extends Struct.ComponentSchema {
+  collectionName: 'components_elements_tags';
+  info: {
+    description: '';
+    displayName: 'tags';
+  };
+  attributes: {
+    text: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -301,6 +340,7 @@ declare module '@strapi/strapi' {
       'blocks.history-tab': BlocksHistoryTab;
       'blocks.misson-tab': BlocksMissonTab;
       'blocks.navbar': BlocksNavbar;
+      'blocks.project-section': BlocksProjectSection;
       'blocks.services': BlocksServices;
       'blocks.tab': BlocksTab;
       'blocks.team-tab': BlocksTeamTab;
@@ -313,8 +353,10 @@ declare module '@strapi/strapi' {
       'elements.link': ElementsLink;
       'elements.logo': ElementsLogo;
       'elements.member': ElementsMember;
+      'elements.project-card': ElementsProjectCard;
       'elements.review': ElementsReview;
       'elements.servicecard': ElementsServicecard;
+      'elements.tags': ElementsTags;
     }
   }
 }
