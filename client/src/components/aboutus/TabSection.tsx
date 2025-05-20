@@ -3,7 +3,7 @@
 import { IAboutBlocks, IAboutPage } from "@/apis/dtos/about-page.type";
 import { FC, useState } from "react";
 import HistoryTab from "./HistoryTab";
-import MissonTab from "./MissonTab";
+import MissionTab from "./MissonTab";
 import TeamTab from "./TeamTab";
 
 export type ITabSection = { data: IAboutPage };
@@ -11,7 +11,7 @@ export type ITabSection = { data: IAboutPage };
 const renderTabComponent = (block: IAboutBlocks) => {
   switch (block.__component) {
     case "blocks.misson-tab":
-      return <MissonTab data={block} key={block.id} />;
+      return <MissionTab data={block} key={block.id} />;
     case "blocks.team-tab":
       return <TeamTab data={block} key={block.id} />;
     case "blocks.history-tab":

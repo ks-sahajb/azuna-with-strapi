@@ -5,7 +5,7 @@ import IconRenderer from "../atoms/icons/IconRenderer";
 
 export type IBaseMissionTab = { data: IMissionTab };
 
-const MissonTab: FC<IBaseMissionTab> = ({ data }) => {
+const MissionTab: FC<IBaseMissionTab> = ({ data }) => {
   const {
     Tab: { description, title },
     Features,
@@ -50,4 +50,4 @@ const MissonTab: FC<IBaseMissionTab> = ({ data }) => {
   );
 };
 
-export default MissonTab;
+export default MissionTab;
