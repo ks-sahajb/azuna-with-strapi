@@ -3,8 +3,8 @@
 import { IAboutBlocks, IAboutPage } from "@/apis/dtos/about-page.type";
 import { FC, useState } from "react";
 import HistoryTab from "./HistoryTab";
-import MissionTab from "./MissonTab";
 import TeamTab from "./TeamTab";
+import MissionTab from "./MissionTab";
 
 export type ITabSection = { data: IAboutPage };
 
