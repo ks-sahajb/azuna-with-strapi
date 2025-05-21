@@ -1,0 +1,78 @@
+{
+  "kind": "collectionType",
+  "collectionName": "project_details",
+  "info": {
+    "singularName": "project-detail",
+    "pluralName": "project-details",
+    "displayName": "ProjectDetails",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "project_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "tags": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.tags"
+    },
+    "year": {
+      "type": "string"
+    },
+    "client": {
+      "type": "string"
+    },
+    "hero_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "challenge": {
+      "type": "text"
+    },
+    "solution": {
+      "type": "text"
+    },
+    "results": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.tags"
+    },
+    "testimonial": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.review"
+    },
+    "badge": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.badge"
+    },
+    "gallary": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

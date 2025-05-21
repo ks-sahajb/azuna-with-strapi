@@ -1,10 +1,12 @@
 import {
   ICTASection,
   IHeroSection,
+  IReview,
   IServicesSection,
   ITestimonialsSection,
 } from "./home-page.type";
-import { IProject } from "./projects-page.type";
+import { IProject, ITag } from "./projects-page.type";
+import { IBadge, IStrapiImage } from "./shared-component.type";
 
 export type IComponentType =
   | "blocks.hero-section"
@@ -36,4 +38,25 @@ export type Base<
 export type IBlockBase<T extends string> = {
   id: number;
   __component: T;
+};
+
+export type IProjectDetail = {
+  id: number;
+  title: string;
+  year: string;
+  client: string;
+  description: string;
+  challenge: string;
+  solution: string;
+  results: ITag[];
+  testimonial: IReview;
+  badge: IBadge;
+  tags: ITag[];
+  gallary: IStrapiImage[];
+  hero_image: IStrapiImage;
+  project_id: string;
+  documentId: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
 };
