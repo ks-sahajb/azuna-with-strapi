@@ -1,12 +1,7 @@
-import {
-  ICTASection,
-  IHeroSection,
-  IReview,
-  IServicesSection,
-  ITestimonialsSection,
-} from "./home-page.type";
-import { IProject, ITag } from "./projects-page.type";
-import { IBadge, IStrapiImage } from "./shared-component.type";
+import { IHeroSection, IServicesSection, ITestimonialsSection, ICTASection, IReview } from "@/apis/dtos/home-page.type";
+import { IProject, ITag } from "@/apis/dtos/projects-page.type";
+import { IBadge, IStrapiImage } from "@/apis/dtos/shared-component.type";
+
 
 export type IComponentType =
   | "blocks.hero-section"

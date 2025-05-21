@@ -1,5 +1,5 @@
-import { Base, IBlocks } from "./blocks-renderer.type";
-import { IBadge, IButton, IStrapiImage } from "./shared-component.type";
+import { IBlocks, Base } from "@/apis/dtos/blocks-renderer.type";
+import { IBadge, IButton, IStrapiImage } from "@/apis/dtos/shared-component.type";
 
 export type IProjectsPage = {
   id: number;

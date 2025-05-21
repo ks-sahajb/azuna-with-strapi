@@ -1,6 +1,6 @@
+import { IApiResponse } from "@/apis/dtos/shared-component.type";
+import { getStrapiURL } from "@/utils/api-helper";
 import qs from "qs";
-import { getStrapiURL } from "../utils/api-helper";
-import { IApiResponse } from "./dtos/shared-component.type";
 
 export class FetchAPIClient {
   private baseHeaders = {
