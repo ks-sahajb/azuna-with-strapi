@@ -1,7 +1,7 @@
 import React, { FC } from "react";
-import BaseStrapiImage from "../ui/BaseStrapiImage";
 import { IReview } from "@/apis/dtos/home-page.type";
 import { Star, User } from "react-feather";
+import BaseStrapiImage from "@/components/ui/BaseStrapiImage";
 
 export type IReviewCardProps = IReview;
 

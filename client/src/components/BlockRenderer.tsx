@@ -1,9 +1,9 @@
 import { IBlocks } from "@/apis/dtos/blocks-renderer.type";
-import BaseHeroSection from "./BaseHeroSection";
-import CtaSection from "./home/CtaSection";
-import ServiceSection from "./home/ServiceSection";
-import Testimonials from "./home/Testimonials";
-import ProjectsGrid from "./projects/ProjectsGrid";
+import BaseHeroSection from "@/components/BaseHeroSection";
+import CtaSection from "@/components/home/CtaSection";
+import ServiceSection from "@/components/home/ServiceSection";
+import Testimonials from "@/components/home/Testimonials";
+import ProjectsGrid from "@/components/projects/ProjectsGrid";
 
 function blockRenderer(block: IBlocks, index: number) {
   switch (block.__component) {

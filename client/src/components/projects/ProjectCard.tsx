@@ -1,8 +1,8 @@
 import { IProjectCard } from "@/apis/dtos/projects-page.type";
+import BaseLink from "@/components/ui/BaseLink";
+import BaseStrapiImage from "@/components/ui/BaseStrapiImage";
 import { FC } from "react";
 import { ArrowRight } from "react-feather";
-import BaseStrapiImage from "../ui/BaseStrapiImage";
-import BaseLink from "../ui/BaseLink";
 
 export type IProjectCardProps = IProjectCard;
 

@@ -1,10 +1,10 @@
 "use client";
 
 import { IAboutBlocks, IAboutPage } from "@/apis/dtos/about-page.type";
+import HistoryTab from "@/components/aboutus/HistoryTab";
+import MissionTab from "@/components/aboutus/MissionTab";
+import TeamTab from "@/components/aboutus/TeamTab";
 import { FC, useState } from "react";
-import HistoryTab from "./HistoryTab";
-import TeamTab from "./TeamTab";
-import MissionTab from "./MissionTab";
 
 export type ITabSection = { data: IAboutPage };
 

@@ -1,6 +1,6 @@
 import { ITestimonialsSection } from "@/apis/dtos/home-page.type";
+import ReviewCard from "@/components/home/ReviewCard";
 import { FC } from "react";
-import ReviewCard from "./ReviewCard";
 
 export type ITestimonialsProps = { data: ITestimonialsSection };
 
