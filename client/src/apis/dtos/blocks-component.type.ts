@@ -23,7 +23,7 @@ export type IBlocks =
   | ICTASection
   | IProject;
 
-export type IBase<
+type IBase<
   T extends IComponentType,
   D extends object = Record<string, unknown>,
 > = {
