@@ -4,11 +4,19 @@ import { FC, Suspense } from "react";
 
 import { IIconName, iconLoader } from "@/components/atoms/icons/icons";
 
+
 export type IIconRendererProps = { name: IIconName; iconProps?: IconProps };
 
-const IconRenderer: FC<IIconRendererProps> = ({ name, iconProps }) => {
+/**
+ * IconRenderer component
+ * Dynamically renders an icon from the iconLoader map by name.
+ */
+const IconRenderer: FC<IIconRendererProps> = (props) => {
+  const { name, iconProps } = props;
+
   const CurrentIcon = iconLoader[name];
 
+  // Fallback if icon is not found
   if (!CurrentIcon) {
     return (
       <div
@@ -20,6 +28,7 @@ const IconRenderer: FC<IIconRendererProps> = ({ name, iconProps }) => {
     );
   }
 
+  // Render the icon with Suspense fallback
   return (
     <Suspense
       fallback={

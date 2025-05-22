@@ -1,4 +1,4 @@
-import { IProjectsPage } from "@/apis/dtos/projects-page.type";
+import { IProjectsPage } from "@/apis/dtos/blocks-component.type";
 import { FetchAPIClient } from "@/apis/fetch-api";
 
 const queryObj = {
@@ -20,7 +20,7 @@ const queryObj = {
   },
 };
 
-export async function getProjectsPage() {
+export const getProjectsPage = () => {
   const api = new FetchAPIClient();
   return api.get<IProjectsPage>("/projects-page", queryObj);
-}
+};

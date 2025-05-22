@@ -1,4 +1,4 @@
-import { IAboutPage } from "@/apis/dtos/about-page.type";
+import { IAboutPage } from "@/apis/dtos/blocks-component.type";
 import { FetchAPIClient } from "@/apis/fetch-api";
 
 const queryObj = {
@@ -38,8 +38,8 @@ const queryObj = {
   },
 };
 
-export async function getAboutPage() {
+export const getAboutPage = () => {
   const api = new FetchAPIClient();
 
   return api.get<IAboutPage>("/about-us", queryObj);
-}
+};

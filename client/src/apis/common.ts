@@ -1,4 +1,4 @@
-import { IGlobalsData } from "@/apis/dtos/globals.type";
+import { ICommonData } from "@/apis/dtos/common.type";
 import { FetchAPIClient } from "@/apis/fetch-api";
 
 const queryObj = {
@@ -23,8 +23,8 @@ const queryObj = {
   },
 };
 
-export async function getGlobals() {
+export const getCommons = () => {
   const api = new FetchAPIClient();
 
-  return await api.get<IGlobalsData>("/global", queryObj);
-}
+  return api.get<ICommonData>("/global", queryObj);
+};

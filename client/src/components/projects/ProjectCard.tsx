@@ -2,17 +2,24 @@ import { ArrowRight } from "react-feather";
 
 import { FC } from "react";
 
-import { IProjectCard } from "@/apis/dtos/projects-page.type";
+import { IProjectCard } from "@/apis/dtos/blocks-component.type";
 
 import BaseLink from "@/components/ui/BaseLink";
 import BaseStrapiImage from "@/components/ui/BaseStrapiImage";
 
 export type IProjectCardProps = IProjectCard;
 
+// ======================= Component =====================
+/**
+ * ProjectCard component
+ * Renders a single project card with image, badge, tags, title, description, and a link button.
+ */
+
 const ProjectCard: FC<IProjectCardProps> = (props) => {
   const { image, badge, button, description, title, tags } = props;
   return (
     <div className="group relative overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
+      {/* Project image and tags */}
       <div className="relative aspect-video overflow-hidden">
         {image && (
           <BaseStrapiImage
@@ -39,6 +46,7 @@ const ProjectCard: FC<IProjectCardProps> = (props) => {
           </div>
         </div>
       </div>
+      {/* Project details */}
       <div className="p-6">
         <span className="mb-2 inline-block text-sm font-medium text-cyan-600">
           {badge.text}

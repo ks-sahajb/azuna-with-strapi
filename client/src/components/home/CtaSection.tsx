@@ -2,9 +2,15 @@ import { Mail, MapPin, PhoneCall } from "react-feather";
 
 import { FC } from "react";
 
-import { ICTASection } from "@/apis/dtos/home-page.type";
+import { ICTASection } from "@/apis/dtos/blocks-component.type";
 
 export type ICtaSectionProps = { data: ICTASection };
+
+// ======================= Component =====================
+/**
+ * CtaSection component
+ * Renders a call-to-action section with contact information (phone, email, location).
+ */
 
 const CtaSection: FC<ICtaSectionProps> = (props) => {
   const { badge, title, description, contact } = props.data;
@@ -14,6 +20,7 @@ const CtaSection: FC<ICtaSectionProps> = (props) => {
       <div className="container mx-auto px-4">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div className="space-y-6">
+            {/* Badge, title, and description */}
             <span className="inline-block rounded-full bg-cyan-100 px-4 py-1.5 text-sm font-medium text-cyan-800 shadow-sm">
               {badge.text}
             </span>
@@ -21,7 +28,9 @@ const CtaSection: FC<ICtaSectionProps> = (props) => {
               {title}
             </h2>
             <p className="mt-4 text-lg text-gray-600">{description}</p>
+            {/* Contact details */}
             <div className="mt-8 space-y-6">
+              {/* Phone */}
               <div className="flex items-start">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-cyan-100 to-blue-100 text-cyan-600 shadow-sm">
                   <PhoneCall size={19} />
@@ -31,6 +40,7 @@ const CtaSection: FC<ICtaSectionProps> = (props) => {
                   <p className="text-gray-600">{contact.mobile}</p>
                 </div>
               </div>
+              {/* Email */}
               <div className="flex items-start">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-cyan-100 to-blue-100 text-cyan-600 shadow-sm">
                   <Mail size={19} />
@@ -40,6 +50,7 @@ const CtaSection: FC<ICtaSectionProps> = (props) => {
                   <p className="text-gray-600">{contact.email}</p>
                 </div>
               </div>
+              {/* Location */}
               <div className="flex items-start">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-cyan-100 to-blue-100 text-cyan-600 shadow-sm">
                   <MapPin size={19} />

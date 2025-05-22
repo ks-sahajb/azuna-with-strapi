@@ -1,9 +1,13 @@
 import dynamic from "next/dynamic";
 
+// ======================= Icon Loader =======================
+// Helper to dynamically load icons from react-feather by name
 const loadIcon = (iconName: keyof typeof import("react-feather")) => {
   return dynamic(() => import("react-feather").then((mod) => mod[iconName]));
 };
 
+// ======================= Icon Map =======================
+// Map of icon names to dynamic icon components
 export const iconLoader = {
   code: loadIcon("Code"),
   shopping_bag: loadIcon("ShoppingBag"),
@@ -23,4 +27,8 @@ export const iconLoader = {
   watch: loadIcon("Watch"),
 } as const;
 
+// ======================= Type Definitions =======================
+
+// ======================= Types =======================
+// Type for icon names
 export type IIconName = keyof typeof iconLoader;

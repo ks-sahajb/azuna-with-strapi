@@ -2,16 +2,22 @@ import { Check, Star, User } from "react-feather";
 
 import { FC } from "react";
 
-import { IProjectDetail } from "@/apis/dtos/blocks-renderer.type";
+import { IProjectDetail } from "@/apis/dtos/blocks-component.type";
 
 import BaseStrapiImage from "@/components/ui/BaseStrapiImage";
+
+// ======================= Component =====================
+/**
+ * ProjectSidebar component
+ * Renders a sidebar with project metadata and links.
+ */
 
 type IProjectSidebarProps = {
   project: IProjectDetail;
 };
 
-const ProjectSidebar: FC<IProjectSidebarProps> = ({ project }) => {
-  const { results, testimonial, tags } = project;
+const ProjectSidebar: FC<IProjectSidebarProps> = (props) => {
+  const { results, testimonial, tags } = props.project;
 
   return (
     <div className="space-y-8 w-3/6">

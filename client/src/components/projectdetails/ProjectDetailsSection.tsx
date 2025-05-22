@@ -1,17 +1,21 @@
 import { FC } from "react";
 
-import { IProjectDetail } from "@/apis/dtos/blocks-renderer.type";
+import { IProjectDetail } from "@/apis/dtos/blocks-component.type";
 
 import BaseStrapiImage from "@/components/ui/BaseStrapiImage";
+
+// ======================= Component =====================
+/**
+ * ProjectDetailsSection component
+ * Renders the main details section for a project, including description and images.
+ */
 
 type IProjectDetailsSectionProps = {
   project: IProjectDetail;
 };
 
-const ProjectDetailsSection: FC<IProjectDetailsSectionProps> = ({
-  project,
-}) => {
-  const { challenge, solution, gallary } = project;
+const ProjectDetailsSection: FC<IProjectDetailsSectionProps> = (porps) => {
+  const { challenge, solution, gallary } = porps.project;
 
   return (
     <section className="w-full bg-white py-12 md:py-16 lg:py-20">

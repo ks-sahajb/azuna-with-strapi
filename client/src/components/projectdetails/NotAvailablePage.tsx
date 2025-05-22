@@ -2,6 +2,12 @@ import { AlertTriangle } from "react-feather";
 
 import BaseLink from "@/components/ui/BaseLink";
 
+// ======================= Component =====================
+/**
+ * NotAvailablePage component
+ * Renders a fallback page when project details are not available.
+ */
+
 const NotAvailablePage = () => {
   return (
     <main className="flex-1">

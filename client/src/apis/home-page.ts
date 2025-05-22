@@ -1,4 +1,4 @@
-import { IHomePageData } from "@/apis/dtos/home-page.type";
+import { IHomePageData } from "@/apis/dtos/blocks-component.type";
 import { FetchAPIClient } from "@/apis/fetch-api";
 
 const queryObj = {
@@ -6,9 +6,6 @@ const queryObj = {
     blocks: {
       on: {
         "blocks.hero-section": {
-          populate: "*",
-        },
-        "blocks.navbar": {
           populate: "*",
         },
         "blocks.services": {
@@ -35,8 +32,8 @@ const queryObj = {
   },
 };
 
-export async function getHomePage() {
+export const getHomePage = () => {
   const api = new FetchAPIClient();
 
   return api.get<IHomePageData>("/home-page", queryObj);
-}
+};

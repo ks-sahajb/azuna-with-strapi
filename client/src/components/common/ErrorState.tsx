@@ -4,6 +4,11 @@ type IErrorStateProps = {
   message?: string;
 };
 
+// ======================= Component =====================
+/**
+ * ErrorState component
+ * Displays an error message or fallback UI for error states.
+ */
 const ErrorState: FC<IErrorStateProps> = ({ message }) => (
   <div className="flex flex-col items-center justify-center min-h-[300px] text-center">
     <div className="mb-4 text-5xl">😢</div>

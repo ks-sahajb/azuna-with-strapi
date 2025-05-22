@@ -1,8 +1,8 @@
 import { getProjectsPage } from "@/apis/projects-page";
 
-import BlockRenderer from "@/components/BlockRenderer";
+import BlockRenderer from "@/components/common/BlockRenderer";
 
-export default async function ProjectsPage() {
+const ProjectsPage = async () => {
   const { data } = await getProjectsPage();
 
   return (
@@ -12,4 +12,6 @@ export default async function ProjectsPage() {
       </main>
     </div>
   );
-}
+};
+
+export default ProjectsPage;

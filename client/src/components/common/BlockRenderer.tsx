@@ -1,12 +1,21 @@
-import { IBlocks } from "@/apis/dtos/blocks-renderer.type";
+import { FC } from "react";
 
-import BaseHeroSection from "@/components/BaseHeroSection";
+import { IBlocks } from "@/apis/dtos/blocks-component.type";
+
+import BaseHeroSection from "@/components/common/BaseHeroSection";
 import CtaSection from "@/components/home/CtaSection";
 import ServiceSection from "@/components/home/ServiceSection";
 import Testimonials from "@/components/home/Testimonials";
 import ProjectsGrid from "@/components/projects/ProjectsGrid";
 
-function blockRenderer(block: IBlocks, index: number) {
+type IBlockRendererProps = { blocks: IBlocks[] };
+
+// ======================= Helper ========================
+/**
+ * BlockRendererHelper
+ * Returns the correct component for each block type.
+ */
+const BlockRendererHelper = (block: IBlocks, index: number) => {
   switch (block.__component) {
     case "blocks.hero-section":
       return <BaseHeroSection data={block} key={index} />;
@@ -21,10 +30,17 @@ function blockRenderer(block: IBlocks, index: number) {
     default:
       return null;
   }
-}
+};
 
-const BlockRenderer = ({ blocks }: { blocks: IBlocks[] }) => {
-  return blocks.map((block, index) => blockRenderer(block, index));
+// ======================= Component =====================
+/**
+ * BlockRenderer component
+ * Iterates over blocks and renders the appropriate component for each.
+ */
+const BlockRenderer: FC<IBlockRendererProps> = (props) => {
+  const { blocks } = props;
+
+  return blocks.map((block, index) => BlockRendererHelper(block, index));
 };
 
 export default BlockRenderer;

@@ -1,9 +1,9 @@
 import { getAboutPage } from "@/apis/about-page";
 
-import BaseHeroSection from "@/components/BaseHeroSection";
 import TabSection from "@/components/aboutus/TabSection";
+import BaseHeroSection from "@/components/common/BaseHeroSection";
 
-export default async function AboutPage() {
+const AboutPage = async () => {
   const { data } = await getAboutPage();
 
   return (
@@ -16,4 +16,6 @@ export default async function AboutPage() {
       </main>
     </div>
   );
-}
+};
+
+export default AboutPage;

@@ -1,10 +1,16 @@
 import React, { FC } from "react";
 
-import { IServicesSection } from "@/apis/dtos/home-page.type";
+import { IServicesSection } from "@/apis/dtos/blocks-component.type";
 
 import ServiceItem from "@/components/home/ServiceItem";
 
 export type IServiceSectionProps = { data: IServicesSection };
+
+// ======================= Component =====================
+/**
+ * ServiceSection component
+ * Renders a section containing a list of services.
+ */
 
 const ServiceSection: FC<IServiceSectionProps> = (props) => {
   const { badge, description, title, services } = props.data;
@@ -15,6 +21,7 @@ const ServiceSection: FC<IServiceSectionProps> = (props) => {
       className="w-full bg-white py-16 md:py-24 lg:py-32"
     >
       <div className="container mx-auto px-4">
+        {/* ======================= Header ===================== */}
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-4">
             <span className="inline-block rounded-full bg-cyan-100 px-4 py-1.5 text-sm font-medium text-cyan-800 shadow-sm">
@@ -29,6 +36,7 @@ const ServiceSection: FC<IServiceSectionProps> = (props) => {
           </div>
         </div>
 
+        {/* ======================= Services Grid ===================== */}
         <div className="mx-auto mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
             <ServiceItem {...service} key={service.id} />

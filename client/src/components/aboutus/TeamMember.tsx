@@ -1,21 +1,23 @@
-import React, { FC } from "react";
+import { FC } from "react";
 
-import { ITeamMember } from "@/apis/dtos/about-page.type";
+import { ITeamMember } from "@/apis/dtos/blocks-component.type";
 
 import IconRenderer from "@/components/atoms/icons/IconRenderer";
 import BaseStrapiImage from "@/components/ui/BaseStrapiImage";
 
+// ======================= Type Definitions =======================
+
 export type ITeamMemeberProps = ITeamMember;
 
-const TeamMember: FC<ITeamMemeberProps> = ({
-  image,
-  name,
-  position,
-  info,
-  icon,
-}) => {
+/**
+ * TeamMember component
+ */
+const TeamMember: FC<ITeamMemeberProps> = (props) => {
+  const { image, name, position, info, icon } = props;
+
   return (
     <div className="group rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:border-cyan-100 hover:shadow-lg">
+      {/* Team member image with overlay and name/position */}
       <div className="relative mb-4 aspect-square overflow-hidden rounded-lg">
         {image && (
           <BaseStrapiImage
@@ -32,7 +34,9 @@ const TeamMember: FC<ITeamMemeberProps> = ({
           <p className="text-cyan-200">{position}</p>
         </div>
       </div>
+      {/* Team member info */}
       <p className="text-gray-600">{info}</p>
+      {/* Icon link (e.g., social or contact) */}
       <div className="mt-4 flex space-x-3">
         <a href="#" className="text-cyan-600 hover:text-cyan-700">
           {icon && <IconRenderer name={icon.icon} />}
