@@ -4,6 +4,12 @@ import { IProjectDetail } from "@/apis/dtos/blocks-component.type";
 
 import BaseStrapiImage from "@/components/ui/BaseStrapiImage";
 
+// ======================= Component =====================
+/**
+ * ProjectDetailsSection component
+ * Renders the main details section for a project, including description and images.
+ */
+
 type IProjectDetailsSectionProps = {
   project: IProjectDetail;
 };

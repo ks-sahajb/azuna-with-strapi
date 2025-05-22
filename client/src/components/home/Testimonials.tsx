@@ -1,11 +1,15 @@
 import { FC } from "react";
 
-import { ITestimonialsSection } from "@/apis/dtos/home-page.type";
+import { ITestimonialsSection } from "@/apis/dtos/blocks-component.type";
 
 import ReviewCard from "@/components/home/ReviewCard";
 
 export type ITestimonialsProps = { data: ITestimonialsSection };
 
+/**
+ * Testimonials component
+ * Renders the testimonials section with a badge, title, description, and a grid of review cards.
+ */
 const Testimonials: FC<ITestimonialsProps> = (props) => {
   const { badge, description, title, reviews } = props.data;
 
@@ -15,6 +19,7 @@ const Testimonials: FC<ITestimonialsProps> = (props) => {
       className="w-full bg-gradient-to-br from-cyan-50 to-white py-16 md:py-24 lg:py-32"
     >
       <div className="container mx-auto px-4">
+        {/* Section header */}
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-4">
             <span className="inline-block rounded-full bg-cyan-100 px-4 py-1.5 text-sm font-medium text-cyan-800 shadow-sm">
@@ -29,6 +34,7 @@ const Testimonials: FC<ITestimonialsProps> = (props) => {
           </div>
         </div>
 
+        {/* Reviews grid */}
         <div className="mx-auto mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {reviews.map((item) => (
             <ReviewCard {...item} key={item.id} />

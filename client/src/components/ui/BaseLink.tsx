@@ -9,6 +9,12 @@ import { ILink } from "@/apis/dtos/shared-component.type";
 
 import IconRenderer from "@/components/atoms/icons/IconRenderer";
 
+// ======================= Component =====================
+/**
+ * BaseLink component
+ * Renders a styled link with optional icon and intent, supporting both text and icon content types.
+ */
+
 const linkCVA = cva("", {
   variants: {
     intent: {

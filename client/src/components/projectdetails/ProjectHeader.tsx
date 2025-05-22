@@ -9,6 +9,13 @@ import BaseStrapiImage from "@/components/ui/BaseStrapiImage";
 
 type IProjectHeaderProps = { project: IProjectDetail };
 
+/**
+ * ProjectHeader component
+ * Renders the header section for a project details page.
+ */
+
+// ======================= Component =====================
+
 const ProjectHeader: FC<IProjectHeaderProps> = (props) => {
   const { badge, title, tags, hero_image, client, year, description } =
     props.project;

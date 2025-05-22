@@ -9,6 +9,12 @@ export type IBaseStrapiImageProps = IStrapiImage & {
   imageProps?: Partial<ImageProps>;
 };
 
+// ======================= Component =====================
+/**
+ * BaseStrapiImage component
+ * Renders an image from Strapi with proper handling for responsive and accessibility.
+ */
+
 const BaseStrapiImage: FC<IBaseStrapiImageProps> = (props) => {
   const { url, alternativeText, width, height, documentId, imageProps } = props;
 

@@ -10,6 +10,11 @@ import ProjectsGrid from "@/components/projects/ProjectsGrid";
 
 type IBlockRendererProps = { blocks: IBlocks[] };
 
+// ======================= Helper ========================
+/**
+ * BlockRendererHelper
+ * Returns the correct component for each block type.
+ */
 const BlockRendererHelper = (block: IBlocks, index: number) => {
   switch (block.__component) {
     case "blocks.hero-section":
@@ -27,6 +32,11 @@ const BlockRendererHelper = (block: IBlocks, index: number) => {
   }
 };
 
+// ======================= Component =====================
+/**
+ * BlockRenderer component
+ * Iterates over blocks and renders the appropriate component for each.
+ */
 const BlockRenderer: FC<IBlockRendererProps> = (props) => {
   const { blocks } = props;
 

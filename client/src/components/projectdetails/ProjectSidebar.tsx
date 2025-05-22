@@ -6,6 +6,12 @@ import { IProjectDetail } from "@/apis/dtos/blocks-component.type";
 
 import BaseStrapiImage from "@/components/ui/BaseStrapiImage";
 
+// ======================= Component =====================
+/**
+ * ProjectSidebar component
+ * Renders a sidebar with project metadata and links.
+ */
+
 type IProjectSidebarProps = {
   project: IProjectDetail;
 };

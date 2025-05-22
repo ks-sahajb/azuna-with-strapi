@@ -8,6 +8,12 @@ import BaseLink from "@/components/ui/BaseLink";
 
 export type IFooterProps = IFooter;
 
+// ======================= Component =====================
+/**
+ * Footer component
+ * Renders the main footer for the application, including logo, description, external links, navigation links, and contact information.
+ */
+
 const Footer: FC<IFooterProps> = (props) => {
   const {
     links,
@@ -22,8 +28,10 @@ const Footer: FC<IFooterProps> = (props) => {
 
   return (
     <footer className="w-full bg-gray-900 py-12 text-white">
+      {/* Main container */}
       <div className="container mx-auto px-4">
         <div className="flex justify-between flex-col gap-10 lg:flex-row lg:gap-0">
+          {/* Logo, description, and external links */}
           <div className="lg:w-1/2">
             <h3 className="mb-4 text-xl font-bold text-white">
               <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
@@ -46,6 +54,7 @@ const Footer: FC<IFooterProps> = (props) => {
             </div>
           </div>
 
+          {/* Navigation links */}
           <div>
             <h3 className="mb-4 text-lg font-semibold text-white">
               {linktitle}
@@ -64,6 +73,7 @@ const Footer: FC<IFooterProps> = (props) => {
             </ul>
           </div>
 
+          {/* Contact information */}
           <div>
             <h3 className="mb-4 text-lg font-semibold text-white">{ctitle}</h3>
             <ul className="space-y-3 text-gray-400">
@@ -82,6 +92,7 @@ const Footer: FC<IFooterProps> = (props) => {
             </ul>
           </div>
         </div>
+        {/* Copyright */}
         <div className="mt-12 border-t border-gray-800 pt-8 text-center">
           <p className="text-sm text-gray-400">
             © {new Date().getFullYear()} {copyright}

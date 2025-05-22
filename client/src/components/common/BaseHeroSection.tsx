@@ -1,6 +1,8 @@
+// ======================= BaseHeroSection Component =======================
+// Renders a hero section with badge, title, description, optional image, and up to two buttons.
+
 import clsx from "clsx";
 import { ArrowRight } from "react-feather";
-
 import React, { FC } from "react";
 
 import { IHeroSection } from "@/apis/dtos/blocks-component.type";
@@ -12,6 +14,10 @@ export type IBaseHeroSectionProps = {
   data: IHeroSection;
 };
 
+/**
+ * BaseHeroSection component
+ * Renders a hero section with badge, title, description, optional image, and up to two buttons.
+ */
 const BaseHeroSection: FC<IBaseHeroSectionProps> = (props) => {
   const { badge, title, description, image, button } = props.data;
 
@@ -19,6 +25,7 @@ const BaseHeroSection: FC<IBaseHeroSectionProps> = (props) => {
 
   return (
     <section className="relative w-full overflow-hidden bg-gradient-to-br from-cyan-50 via-white to-white py-16 md:py-24 lg:py-32">
+      {/* Decorative background grid */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute left-0 top-0 h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
       </div>
@@ -31,6 +38,7 @@ const BaseHeroSection: FC<IBaseHeroSectionProps> = (props) => {
               : "flex flex-col items-center justify-center text-center",
           )}
         >
+          {/* Hero text content */}
           <div
             className={clsx(
               "flex flex-col justify-center space-y-6",
@@ -59,6 +67,7 @@ const BaseHeroSection: FC<IBaseHeroSectionProps> = (props) => {
               </p>
             </div>
 
+            {/* Render up to two buttons if available */}
             {button && button.length > 0 && (
               <div className="flex flex-col gap-3 pt-2 sm:flex-row">
                 {button[0] && (
@@ -82,6 +91,7 @@ const BaseHeroSection: FC<IBaseHeroSectionProps> = (props) => {
             )}
           </div>
 
+          {/* Hero image if available */}
           {image && (
             <div className="relative mt-8 lg:mt-0 w-fit">
               <div className="absolute -inset-4 rounded-2xl bg-gradient-to-tr from-cyan-200 to-cyan-50 opacity-75 blur-xl"></div>

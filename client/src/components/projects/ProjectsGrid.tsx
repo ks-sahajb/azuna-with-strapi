@@ -4,6 +4,12 @@ import { IProject } from "@/apis/dtos/blocks-component.type";
 
 import ProjectCard from "@/components/projects/ProjectCard";
 
+// ======================= Component =====================
+/**
+ * ProjectsGrid component
+ * Renders a grid of project cards for the projects page.
+ */
+
 export type IProjectsGridProps = { data?: IProject };
 
 const ProjectsGrid: React.FC<IProjectsGridProps> = (props) => {
