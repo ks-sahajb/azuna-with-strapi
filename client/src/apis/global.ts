@@ -23,8 +23,8 @@ const queryObj = {
   },
 };
 
-export async function getGlobals() {
+export const getGlobals = () => {
   const api = new FetchAPIClient();
 
-  return await api.get<IGlobalsData>("/global", queryObj);
-}
+  return api.get<IGlobalsData>("/global", queryObj);
+};

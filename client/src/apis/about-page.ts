@@ -38,8 +38,8 @@ const queryObj = {
   },
 };
 
-export async function getAboutPage() {
+export const getAboutPage = () => {
   const api = new FetchAPIClient();
 
   return api.get<IAboutPage>("/about-us", queryObj);
-}
+};

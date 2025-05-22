@@ -20,7 +20,7 @@ const queryObj = {
   },
 };
 
-export async function getProjectsPage() {
+export const getProjectsPage = () => {
   const api = new FetchAPIClient();
   return api.get<IProjectsPage>("/projects-page", queryObj);
-}
+};

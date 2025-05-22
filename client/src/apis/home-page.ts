@@ -8,9 +8,6 @@ const queryObj = {
         "blocks.hero-section": {
           populate: "*",
         },
-        "blocks.navbar": {
-          populate: "*",
-        },
         "blocks.services": {
           populate: {
             badge: true,
@@ -35,8 +32,8 @@ const queryObj = {
   },
 };
 
-export async function getHomePage() {
+export const getHomePage = () => {
   const api = new FetchAPIClient();
 
   return api.get<IHomePageData>("/home-page", queryObj);
-}
+};
