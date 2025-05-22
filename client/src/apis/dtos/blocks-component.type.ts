@@ -9,7 +9,7 @@ import {
 } from "@/apis/dtos/shared-component.type";
 
 // ================= Block Types =================
-export type IComponentType =
+type IComponentType =
   | "blocks.hero-section"
   | "blocks.services"
   | "blocks.testimonials"
