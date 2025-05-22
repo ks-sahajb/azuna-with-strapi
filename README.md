@@ -1,4 +1,4 @@
-## QPR New Design With Next.js and Strapi 🚀
+## AZUNA  🚀
 
 A monorepo project for a company specializing in web design and application (AP) projects. It features a modern Next.js frontend and a Strapi backend for content management, enabling rapid delivery of high-quality web and app solutions for clients.
 
