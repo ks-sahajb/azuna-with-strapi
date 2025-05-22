@@ -2,7 +2,7 @@ import { getHomePage } from "@/apis/home-page";
 
 import BlockRenderer from "@/components/common/BlockRenderer";
 
-export default async function LandingPage() {
+const LandingPage = async () => {
   const { data } = await getHomePage();
 
   return (
@@ -12,4 +12,6 @@ export default async function LandingPage() {
       </main>
     </div>
   );
-}
+};
+
+export default LandingPage;
