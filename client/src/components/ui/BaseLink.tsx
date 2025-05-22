@@ -1,9 +1,13 @@
-import { ILink } from "@/apis/dtos/shared-component.type";
-import { cva, VariantProps } from "class-variance-authority";
+import { VariantProps, cva } from "class-variance-authority";
 import clsx from "clsx";
-import Link, { LinkProps } from "next/link";
+
 import { AnchorHTMLAttributes, FC } from "react";
-import IconRenderer from "../atoms/icons/IconRenderer";
+
+import Link, { LinkProps } from "next/link";
+
+import { ILink } from "@/apis/dtos/shared-component.type";
+
+import IconRenderer from "@/components/atoms/icons/IconRenderer";
 
 const linkCVA = cva("", {
   variants: {

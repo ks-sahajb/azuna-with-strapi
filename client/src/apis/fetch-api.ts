@@ -1,4 +1,4 @@
-import { getStrapiURL } from "@/utils/api-helper";
+import { getStrapiURL } from "@/apis/api-helper";
 import qs from "qs";
 
 import { IApiResponse } from "@/apis/dtos/shared-component.type";
