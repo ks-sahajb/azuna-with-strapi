@@ -1,6 +1,8 @@
-import { IHistoryTab } from "@/apis/dtos/about-page.type";
-import TimelineItem from "@/components/aboutus/TimelineItem";
 import React, { FC } from "react";
+
+import { IHistoryTab } from "@/apis/dtos/about-page.type";
+
+import TimelineItem from "@/components/aboutus/TimelineItem";
 
 export type IHistoryTabProps = { data: IHistoryTab };
 

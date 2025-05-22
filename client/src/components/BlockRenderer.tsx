@@ -1,4 +1,5 @@
 import { IBlocks } from "@/apis/dtos/blocks-renderer.type";
+
 import BaseHeroSection from "@/components/BaseHeroSection";
 import CtaSection from "@/components/home/CtaSection";
 import ServiceSection from "@/components/home/ServiceSection";

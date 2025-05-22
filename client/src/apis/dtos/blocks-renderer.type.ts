@@ -1,7 +1,12 @@
-import { IHeroSection, IServicesSection, ITestimonialsSection, ICTASection, IReview } from "@/apis/dtos/home-page.type";
+import {
+  ICTASection,
+  IHeroSection,
+  IReview,
+  IServicesSection,
+  ITestimonialsSection,
+} from "@/apis/dtos/home-page.type";
 import { IProject, ITag } from "@/apis/dtos/projects-page.type";
 import { IBadge, IStrapiImage } from "@/apis/dtos/shared-component.type";
-
 
 export type IComponentType =
   | "blocks.hero-section"
@@ -19,7 +24,7 @@ export type IBlocks =
 
 export type Base<
   T extends IComponentType,
-  D extends object = Record<string, unknown>
+  D extends object = Record<string, unknown>,
 > = {
   id: number;
   __component: T;

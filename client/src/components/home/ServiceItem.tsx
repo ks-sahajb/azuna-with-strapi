@@ -1,7 +1,10 @@
-import { IService } from "@/apis/dtos/home-page.type";
-import IconRenderer from "@/components/atoms/icons/IconRenderer";
-import { FC } from "react";
 import { Check } from "react-feather";
+
+import { FC } from "react";
+
+import { IService } from "@/apis/dtos/home-page.type";
+
+import IconRenderer from "@/components/atoms/icons/IconRenderer";
 
 export type IServiceItemProps = IService;
 

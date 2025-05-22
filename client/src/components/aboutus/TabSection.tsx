@@ -1,10 +1,12 @@
 "use client";
 
+import { FC, useState } from "react";
+
 import { IAboutBlocks, IAboutPage } from "@/apis/dtos/about-page.type";
+
 import HistoryTab from "@/components/aboutus/HistoryTab";
 import MissionTab from "@/components/aboutus/MissionTab";
 import TeamTab from "@/components/aboutus/TeamTab";
-import { FC, useState } from "react";
 
 export type ITabSection = { data: IAboutPage };
 
@@ -23,7 +25,7 @@ const renderTabComponent = (block: IAboutBlocks) => {
 
 const TabSection: FC<ITabSection> = ({ data }) => {
   const [activeTab, setActiveTab] = useState<string>(
-    data.blocks[1].__component || "blocks.misson-tab"
+    data.blocks[1].__component || "blocks.misson-tab",
   );
 
   return (
@@ -47,7 +49,7 @@ const TabSection: FC<ITabSection> = ({ data }) => {
                   >
                     {block.Tab?.heading || "Heading"}
                   </button>
-                )
+                ),
             )}
           </div>
         </div>

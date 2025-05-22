@@ -1,6 +1,8 @@
-import { ITimeLine } from "@/apis/dtos/about-page.type";
-import IconRenderer from "@/components/atoms/icons/IconRenderer";
 import React, { FC } from "react";
+
+import { ITimeLine } from "@/apis/dtos/about-page.type";
+
+import IconRenderer from "@/components/atoms/icons/IconRenderer";
 
 export type ITimeLineItemProps = ITimeLine;
 

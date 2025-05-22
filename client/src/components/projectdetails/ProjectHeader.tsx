@@ -1,8 +1,11 @@
-import { IProjectDetail } from "@/apis/dtos/blocks-renderer.type";
-import BaseStrapiImage from "@/components/ui/BaseStrapiImage";
-import { FC } from "react";
 import { ArrowLeft } from "react-feather";
+
+import { FC } from "react";
+
+import { IProjectDetail } from "@/apis/dtos/blocks-renderer.type";
+
 import BaseLink from "@/components/ui/BaseLink";
+import BaseStrapiImage from "@/components/ui/BaseStrapiImage";
 
 type IProjectHeaderProps = { project: IProjectDetail };
 

@@ -1,7 +1,9 @@
+import React, { FC } from "react";
+
 import { ITeamMember } from "@/apis/dtos/about-page.type";
+
 import IconRenderer from "@/components/atoms/icons/IconRenderer";
 import BaseStrapiImage from "@/components/ui/BaseStrapiImage";
-import React, { FC } from "react";
 
 export type ITeamMemeberProps = ITeamMember;
 

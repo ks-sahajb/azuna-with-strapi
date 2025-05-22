@@ -1,5 +1,7 @@
-import { IProjectDetail } from "@/apis/dtos/blocks-renderer.type";
 import { FC } from "react";
+
+import { IProjectDetail } from "@/apis/dtos/blocks-renderer.type";
+
 import BaseStrapiImage from "@/components/ui/BaseStrapiImage";
 
 type IProjectDetailsSectionProps = {

@@ -1,6 +1,8 @@
-import { iconLoader, IIconName } from "@/components/atoms/icons/icons";
-import { FC, Suspense } from "react";
 import { IconProps } from "react-feather";
+
+import { FC, Suspense } from "react";
+
+import { IIconName, iconLoader } from "@/components/atoms/icons/icons";
 
 export type IIconRendererProps = { name: IIconName; iconProps?: IconProps };
 

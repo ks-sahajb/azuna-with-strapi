@@ -1,6 +1,7 @@
-import { IApiResponse } from "@/apis/dtos/shared-component.type";
 import { getStrapiURL } from "@/utils/api-helper";
 import qs from "qs";
+
+import { IApiResponse } from "@/apis/dtos/shared-component.type";
 
 export class FetchAPIClient {
   private baseHeaders = {
@@ -40,7 +41,7 @@ export class FetchAPIClient {
       return data;
     } catch (error) {
       throw new Error(
-        `Please check if your server is running and you set all the required tokens.`
+        `Please check if your server is running and you set all the required tokens.`,
       );
     }
   }

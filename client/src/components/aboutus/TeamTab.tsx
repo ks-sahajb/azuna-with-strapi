@@ -1,5 +1,7 @@
 import React, { FC } from "react";
+
 import { ITeamTab } from "@/apis/dtos/about-page.type";
+
 import TeamMember from "@/components/aboutus/TeamMember";
 
 export type ITeamTabProps = { data: ITeamTab };

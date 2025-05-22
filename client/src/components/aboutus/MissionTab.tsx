@@ -1,5 +1,7 @@
 import React, { FC } from "react";
+
 import { IMissionTab } from "@/apis/dtos/about-page.type";
+
 import IconRenderer from "@/components/atoms/icons/IconRenderer";
 import BaseStrapiImage from "@/components/ui/BaseStrapiImage";
 

@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 
 import { IServicesSection } from "@/apis/dtos/home-page.type";
+
 import ServiceItem from "@/components/home/ServiceItem";
 
 export type IServiceSectionProps = { data: IServicesSection };
