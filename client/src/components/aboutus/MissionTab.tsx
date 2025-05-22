@@ -1,7 +1,9 @@
 import React, { FC } from "react";
-import BaseStrapiImage from "../ui/BaseStrapiImage";
+
 import { IMissionTab } from "@/apis/dtos/about-page.type";
-import IconRenderer from "../atoms/icons/IconRenderer";
+
+import IconRenderer from "@/components/atoms/icons/IconRenderer";
+import BaseStrapiImage from "@/components/ui/BaseStrapiImage";
 
 export type IBaseMissionTab = { data: IMissionTab };
 

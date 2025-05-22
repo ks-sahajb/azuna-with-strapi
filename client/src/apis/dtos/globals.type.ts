@@ -1,5 +1,5 @@
-import { IBlockBase } from "./blocks-renderer.type";
-import { IContact, ILink, ILogo } from "./shared-component.type";
+import { IBlockBase } from "@/apis/dtos/blocks-renderer.type";
+import { ILogo, ILink, IContact } from "@/apis/dtos/shared-component.type";
 
 export type INavbar = IBlockBase<"blocks.navbar"> & {
   logo: ILogo;

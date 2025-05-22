@@ -1,5 +1,5 @@
-import { IHomePageData } from "./dtos/home-page.type";
-import { FetchAPIClient } from "./fetch-api";
+import { IHomePageData } from "@/apis/dtos/home-page.type";
+import { FetchAPIClient } from "@/apis/fetch-api";
 
 const queryObj = {
   populate: {

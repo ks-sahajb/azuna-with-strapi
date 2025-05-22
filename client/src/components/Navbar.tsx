@@ -1,9 +1,12 @@
 "use client";
 
-import { INavbar } from "@/apis/dtos/globals.type";
-import Link from "next/link";
 import React, { FC } from "react";
-import BaseLink from "./ui/BaseLink";
+
+import Link from "next/link";
+
+import { INavbar } from "@/apis/dtos/globals.type";
+
+import BaseLink from "@/components/ui/BaseLink";
 
 export type INavbarProps = INavbar;
 

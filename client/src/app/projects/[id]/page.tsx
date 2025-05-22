@@ -1,10 +1,12 @@
+import { FC } from "react";
+
 import { getProjectDetails } from "@/apis/projects-details";
+
 import ErrorState from "@/components/common/ErrorState";
 import NotAvailablePage from "@/components/projectdetails/NotAvailablePage";
 import ProjectDetailsSection from "@/components/projectdetails/ProjectDetailsSection";
 import ProjectHeader from "@/components/projectdetails/ProjectHeader";
 import ProjectSidebar from "@/components/projectdetails/ProjectSidebar";
-import { FC } from "react";
 
 type IProjectDetailsProps = {
   params: Promise<{ id: number }>;

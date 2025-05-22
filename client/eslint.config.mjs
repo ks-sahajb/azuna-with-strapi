@@ -9,8 +9,44 @@ const compat = new FlatCompat({
   baseDirectory: __dirname,
 });
 
-const eslintConfig = [
+export default [
+  // Extend Next.js presets
   ...compat.extends("next/core-web-vitals", "next/typescript"),
-];
 
-export default eslintConfig;
+  // Custom rules with plugins
+  {
+    files: ["**/*.{js,ts,jsx,tsx}"],
+    plugins: {
+      import: require("eslint-plugin-import"),
+      "simple-import-sort": require("eslint-plugin-simple-import-sort"),
+    },
+    rules: {
+      // Enforce using aliases instead of relative paths
+      "no-restricted-imports": [
+        "error",
+        {
+          patterns: ["../*", "./*"],
+        },
+      ],
+
+      // Enforce import order with grouping
+      "simple-import-sort/imports": "error",
+      "simple-import-sort/exports": "error",
+
+      // Help ESLint resolve aliases
+      "import/no-unresolved": "error",
+    },
+    settings: {
+      "import/resolver": {
+        alias: {
+          map: [
+            ["@components", "./src/components"],
+            ["@utils", "./src/utils"],
+            ["@hooks", "./src/hooks"],
+          ],
+          extensions: [".js", ".jsx", ".ts", ".tsx"],
+        },
+      },
+    },
+  },
+];

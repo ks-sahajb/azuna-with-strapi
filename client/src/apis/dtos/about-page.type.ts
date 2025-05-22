@@ -1,6 +1,5 @@
-import { IBlocks } from "./blocks-renderer.type";
-import { IHeroSection } from "./home-page.type";
-import { IIcon, IStrapiImage } from "./shared-component.type";
+import { IHeroSection } from "@/apis/dtos/home-page.type";
+import { IIcon, IStrapiImage } from "@/apis/dtos/shared-component.type";
 
 export type IAboutPage = {
   id: number;
