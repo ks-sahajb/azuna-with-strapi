@@ -1,6 +1,6 @@
 import { getHomePage } from "@/apis/home-page";
 
-import BlockRenderer from "@/components/BlockRenderer";
+import BlockRenderer from "@/components/common/BlockRenderer";
 
 export default async function LandingPage() {
   const { data } = await getHomePage();
