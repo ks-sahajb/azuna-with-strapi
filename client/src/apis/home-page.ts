@@ -1,4 +1,4 @@
-import { IHomePageData } from "@/apis/dtos/home-page.type";
+import { IHomePageData } from "@/apis/dtos/blocks-component.type";
 import { FetchAPIClient } from "@/apis/fetch-api";
 
 const queryObj = {

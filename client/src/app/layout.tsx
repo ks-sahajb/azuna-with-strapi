@@ -3,7 +3,7 @@ import { FC } from "react";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
-import { getGlobals } from "@/apis/global";
+import { getCommons } from "@/apis/common";
 
 import Footer from "@/components/common/Footer";
 import Navbar from "@/components/common/Navbar";
@@ -31,7 +31,7 @@ type IBaseRootLayoutProps = Readonly<{
 
 const RootLayout: FC<IBaseRootLayoutProps> = async (props) => {
   const { children } = props;
-  const { data } = await getGlobals();
+  const { data } = await getCommons();
 
   return (
     <html lang="en">

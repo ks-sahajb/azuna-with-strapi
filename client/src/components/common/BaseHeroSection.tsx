@@ -3,7 +3,7 @@ import { ArrowRight } from "react-feather";
 
 import React, { FC } from "react";
 
-import { IHeroSection } from "@/apis/dtos/home-page.type";
+import { IHeroSection } from "@/apis/dtos/blocks-component.type";
 
 import BaseLink from "@/components/ui/BaseLink";
 import BaseStrapiImage from "@/components/ui/BaseStrapiImage";

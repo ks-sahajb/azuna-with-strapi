@@ -2,7 +2,7 @@ import { Mail, MapPin, PhoneCall } from "react-feather";
 
 import React, { FC } from "react";
 
-import { IFooter } from "@/apis/dtos/globals.type";
+import { IFooter } from "@/apis/dtos/layout-component.type";
 
 import BaseLink from "@/components/ui/BaseLink";
 

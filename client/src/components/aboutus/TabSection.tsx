@@ -2,7 +2,7 @@
 
 import { FC, useState } from "react";
 
-import { IAboutBlocks, IAboutPage } from "@/apis/dtos/about-page.type";
+import { IAboutBlocks, IAboutPage } from "@/apis/dtos/blocks-component.type";
 
 import HistoryTab from "@/components/aboutus/HistoryTab";
 import MissionTab from "@/components/aboutus/MissionTab";

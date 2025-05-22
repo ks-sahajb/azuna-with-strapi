@@ -2,7 +2,7 @@ import { Mail, MapPin, PhoneCall } from "react-feather";
 
 import { FC } from "react";
 
-import { ICTASection } from "@/apis/dtos/home-page.type";
+import { ICTASection } from "@/apis/dtos/blocks-component.type";
 
 export type ICtaSectionProps = { data: ICTASection };
 

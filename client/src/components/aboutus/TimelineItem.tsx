@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 
-import { ITimeLine } from "@/apis/dtos/about-page.type";
+import { ITimeLine } from "@/apis/dtos/blocks-component.type";
 
 import IconRenderer from "@/components/atoms/icons/IconRenderer";
 

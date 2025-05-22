@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 
-import { ITeamMember } from "@/apis/dtos/about-page.type";
+import { ITeamMember } from "@/apis/dtos/blocks-component.type";
 
 import IconRenderer from "@/components/atoms/icons/IconRenderer";
 import BaseStrapiImage from "@/components/ui/BaseStrapiImage";

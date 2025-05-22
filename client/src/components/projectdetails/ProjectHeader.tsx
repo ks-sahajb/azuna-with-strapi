@@ -2,7 +2,7 @@ import { ArrowLeft } from "react-feather";
 
 import { FC } from "react";
 
-import { IProjectDetail } from "@/apis/dtos/blocks-renderer.type";
+import { IProjectDetail } from "@/apis/dtos/blocks-component.type";
 
 import BaseLink from "@/components/ui/BaseLink";
 import BaseStrapiImage from "@/components/ui/BaseStrapiImage";

@@ -1,4 +1,4 @@
-import { IProjectDetail } from "@/apis/dtos/blocks-renderer.type";
+import { IProjectDetail } from "@/apis/dtos/blocks-component.type";
 import { FetchAPIClient } from "@/apis/fetch-api";
 
 export const getProjectDetails = async (id: number) => {

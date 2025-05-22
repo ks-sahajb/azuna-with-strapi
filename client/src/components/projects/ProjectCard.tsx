@@ -2,7 +2,7 @@ import { ArrowRight } from "react-feather";
 
 import { FC } from "react";
 
-import { IProjectCard } from "@/apis/dtos/projects-page.type";
+import { IProjectCard } from "@/apis/dtos/blocks-component.type";
 
 import BaseLink from "@/components/ui/BaseLink";
 import BaseStrapiImage from "@/components/ui/BaseStrapiImage";

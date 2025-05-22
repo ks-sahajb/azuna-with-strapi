@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import { IBlocks } from "@/apis/dtos/blocks-renderer.type";
+import { IBlocks } from "@/apis/dtos/blocks-component.type";
 
 import BaseHeroSection from "@/components/common/BaseHeroSection";
 import CtaSection from "@/components/home/CtaSection";

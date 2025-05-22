@@ -2,7 +2,7 @@ import React, { FC } from "react";
 
 import Link from "next/link";
 
-import { INavbar } from "@/apis/dtos/globals.type";
+import { INavbar } from "@/apis/dtos/layout-component.type";
 
 import BaseLink from "@/components/ui/BaseLink";
 

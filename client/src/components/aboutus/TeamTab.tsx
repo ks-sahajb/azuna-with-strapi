@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 
-import { ITeamTab } from "@/apis/dtos/about-page.type";
+import { ITeamTab } from "@/apis/dtos/blocks-component.type";
 
 import TeamMember from "@/components/aboutus/TeamMember";
 

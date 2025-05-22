@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 
-import { IServicesSection } from "@/apis/dtos/home-page.type";
+import { IServicesSection } from "@/apis/dtos/blocks-component.type";
 
 import ServiceItem from "@/components/home/ServiceItem";
 

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { IProject } from "@/apis/dtos/projects-page.type";
+import { IProject } from "@/apis/dtos/blocks-component.type";
 
 import ProjectCard from "@/components/projects/ProjectCard";
 

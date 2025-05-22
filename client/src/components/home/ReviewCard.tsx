@@ -2,7 +2,7 @@ import { Star, User } from "react-feather";
 
 import React, { FC } from "react";
 
-import { IReview } from "@/apis/dtos/home-page.type";
+import { IReview } from "@/apis/dtos/blocks-component.type";
 
 import BaseStrapiImage from "@/components/ui/BaseStrapiImage";
 

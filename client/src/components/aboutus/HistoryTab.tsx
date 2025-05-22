@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 
-import { IHistoryTab } from "@/apis/dtos/about-page.type";
+import { IHistoryTab } from "@/apis/dtos/blocks-component.type";
 
 import TimelineItem from "@/components/aboutus/TimelineItem";
 

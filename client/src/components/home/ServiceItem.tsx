@@ -2,7 +2,7 @@ import { Check } from "react-feather";
 
 import { FC } from "react";
 
-import { IService } from "@/apis/dtos/home-page.type";
+import { IService } from "@/apis/dtos/blocks-component.type";
 
 import IconRenderer from "@/components/atoms/icons/IconRenderer";
 
