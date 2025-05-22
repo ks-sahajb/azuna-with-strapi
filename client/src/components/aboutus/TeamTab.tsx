@@ -1,8 +1,8 @@
 import React, { FC } from "react";
-import BaseStrapiImage from "../ui/BaseStrapiImage";
+
 import { ITeamTab } from "@/apis/dtos/about-page.type";
-import IconRenderer from "../atoms/icons/IconRenderer";
-import TeamMember from "./TeamMember";
+
+import TeamMember from "@/components/aboutus/TeamMember";
 
 export type ITeamTabProps = { data: ITeamTab };
 

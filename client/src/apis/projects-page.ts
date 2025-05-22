@@ -1,5 +1,5 @@
-import { IProjectsPage } from "./dtos/projects-page.type";
-import { FetchAPIClient } from "./fetch-api";
+import { IProjectsPage } from "@/apis/dtos/projects-page.type";
+import { FetchAPIClient } from "@/apis/fetch-api";
 
 const queryObj = {
   populate: {

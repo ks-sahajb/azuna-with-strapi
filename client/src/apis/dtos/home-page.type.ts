@@ -1,12 +1,6 @@
-import { Base, IBlocks } from "./blocks-renderer.type";
-import {
-  IBadge,
-  IButton,
-  IContact,
-  IIcon,
-  IItems,
-  IStrapiImage,
-} from "./shared-component.type";
+import { Base, IBlocks } from "@/apis/dtos/blocks-renderer.type";
+import { IStrapiImage, IBadge, IButton, IIcon, IItems, IContact } from "@/apis/dtos/shared-component.type";
+
 
 export type IHomePageData = {
   id: number;

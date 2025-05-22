@@ -1,8 +1,10 @@
-import { IFooter } from "@/apis/dtos/globals.type";
-import Link from "next/link";
-import React, { FC } from "react";
 import { Mail, MapPin, PhoneCall } from "react-feather";
-import BaseLink from "./ui/BaseLink";
+
+import React, { FC } from "react";
+
+import { IFooter } from "@/apis/dtos/globals.type";
+
+import BaseLink from "@/components/ui/BaseLink";
 
 export type IFooterProps = IFooter;
 

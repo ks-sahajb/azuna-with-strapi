@@ -1,9 +1,12 @@
-import React, { FC } from "react";
-import { ArrowRight } from "react-feather";
 import clsx from "clsx";
+import { ArrowRight } from "react-feather";
+
+import React, { FC } from "react";
+
+import { IHeroSection } from "@/apis/dtos/home-page.type";
+
 import BaseLink from "@/components/ui/BaseLink";
 import BaseStrapiImage from "@/components/ui/BaseStrapiImage";
-import { IHeroSection } from "@/apis/dtos/home-page.type";
 
 export type IBaseHeroSectionProps = {
   data: IHeroSection;
@@ -25,13 +28,13 @@ const BaseHeroSection: FC<IBaseHeroSectionProps> = ({ data }) => {
           className={clsx(
             isImageAvailable
               ? "grid lg:grid-cols-2 gap-8 lg:gap-12 place-items-center"
-              : "flex flex-col items-center justify-center text-center"
+              : "flex flex-col items-center justify-center text-center",
           )}
         >
           <div
             className={clsx(
               "flex flex-col justify-center space-y-6",
-              !isImageAvailable && "max-w-3xl"
+              !isImageAvailable && "max-w-3xl",
             )}
           >
             <div className="space-y-4">
@@ -41,7 +44,7 @@ const BaseHeroSection: FC<IBaseHeroSectionProps> = ({ data }) => {
               <h1
                 className={clsx(
                   "text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl leading-tight",
-                  !isImageAvailable && "text-center"
+                  !isImageAvailable && "text-center",
                 )}
               >
                 {title}
@@ -49,7 +52,7 @@ const BaseHeroSection: FC<IBaseHeroSectionProps> = ({ data }) => {
               <p
                 className={clsx(
                   "mt-4 text-lg text-gray-600 md:text-xl",
-                  !isImageAvailable && "text-center"
+                  !isImageAvailable && "text-center",
                 )}
               >
                 {description}

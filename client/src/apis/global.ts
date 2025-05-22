@@ -1,5 +1,5 @@
-import { IGlobalsData } from "./dtos/globals.type";
-import { FetchAPIClient } from "./fetch-api";
+import { IGlobalsData } from "@/apis/dtos/globals.type";
+import { FetchAPIClient } from "@/apis/fetch-api";
 
 const queryObj = {
   populate: {

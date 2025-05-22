@@ -1,6 +1,8 @@
-import { IProject } from "@/apis/dtos/projects-page.type";
 import React from "react";
-import ProjectCard from "./ProjectCard";
+
+import { IProject } from "@/apis/dtos/projects-page.type";
+
+import ProjectCard from "@/components/projects/ProjectCard";
 
 export type IProjectsGridProps = { data?: IProject };
 

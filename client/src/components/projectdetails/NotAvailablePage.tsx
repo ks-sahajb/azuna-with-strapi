@@ -1,4 +1,5 @@
 import { AlertTriangle } from "react-feather";
+
 import BaseLink from "@/components/ui/BaseLink";
 
 const NotAvailablePage = () => {

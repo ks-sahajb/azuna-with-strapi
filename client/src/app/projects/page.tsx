@@ -1,4 +1,5 @@
 import { getProjectsPage } from "@/apis/projects-page";
+
 import BlockRenderer from "@/components/BlockRenderer";
 
 export default async function ProjectsPage() {
