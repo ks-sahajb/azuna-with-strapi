@@ -12,8 +12,8 @@ export type IBaseHeroSectionProps = {
   data: IHeroSection;
 };
 
-const BaseHeroSection: FC<IBaseHeroSectionProps> = ({ data }) => {
-  const { badge, title, description, image, button } = data;
+const BaseHeroSection: FC<IBaseHeroSectionProps> = (props) => {
+  const { badge, title, description, image, button } = props.data;
 
   const isImageAvailable = Boolean(image);
 

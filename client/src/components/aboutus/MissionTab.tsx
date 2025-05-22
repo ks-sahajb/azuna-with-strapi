@@ -7,12 +7,12 @@ import BaseStrapiImage from "@/components/ui/BaseStrapiImage";
 
 export type IBaseMissionTab = { data: IMissionTab };
 
-const MissionTab: FC<IBaseMissionTab> = ({ data }) => {
+const MissionTab: FC<IBaseMissionTab> = (props) => {
   const {
     Tab: { description, title },
     Features,
     image,
-  } = data;
+  } = props.data;
   return (
     <section className="grid gap-12 lg:grid-cols-2 lg:gap-16">
       <div className="space-y-6">

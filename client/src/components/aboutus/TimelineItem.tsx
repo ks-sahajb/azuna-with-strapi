@@ -6,12 +6,9 @@ import IconRenderer from "@/components/atoms/icons/IconRenderer";
 
 export type ITimeLineItemProps = ITimeLine;
 
-const TimelineItem: FC<ITimeLineItemProps> = ({
-  icon,
-  title,
-  description,
-  year,
-}) => {
+const TimelineItem: FC<ITimeLineItemProps> = (props) => {
+  const { icon, title, description, year } = props;
+
   return (
     <div className="relative pl-12 md:flex md:items-center md:justify-between md:odd:flex-row-reverse md:pl-0">
       <div className="absolute left-0 top-0 flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-cyan-100 to-blue-100 shadow-sm md:left-1/2 md:-ml-4">

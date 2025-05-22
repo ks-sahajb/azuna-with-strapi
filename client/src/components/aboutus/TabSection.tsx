@@ -23,7 +23,9 @@ const renderTabComponent = (block: IAboutBlocks) => {
   }
 };
 
-const TabSection: FC<ITabSection> = ({ data }) => {
+const TabSection: FC<ITabSection> = (props) => {
+  const { data } = props;
+
   const [activeTab, setActiveTab] = useState<string>(
     data.blocks[1].__component || "blocks.misson-tab",
   );

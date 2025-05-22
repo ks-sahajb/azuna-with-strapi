@@ -6,11 +6,11 @@ import TeamMember from "@/components/aboutus/TeamMember";
 
 export type ITeamTabProps = { data: ITeamTab };
 
-const TeamTab: FC<ITeamTabProps> = ({ data }) => {
+const TeamTab: FC<ITeamTabProps> = (props) => {
   const {
     Tab: { title, description },
     Members,
-  } = data;
+  } = props.data;
 
   return (
     <section className="space-y-12">

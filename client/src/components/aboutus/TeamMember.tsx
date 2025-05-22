@@ -7,13 +7,9 @@ import BaseStrapiImage from "@/components/ui/BaseStrapiImage";
 
 export type ITeamMemeberProps = ITeamMember;
 
-const TeamMember: FC<ITeamMemeberProps> = ({
-  image,
-  name,
-  position,
-  info,
-  icon,
-}) => {
+const TeamMember: FC<ITeamMemeberProps> = (props) => {
+  const { image, name, position, info, icon } = props;
+
   return (
     <div className="group rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:border-cyan-100 hover:shadow-lg">
       <div className="relative mb-4 aspect-square overflow-hidden rounded-lg">

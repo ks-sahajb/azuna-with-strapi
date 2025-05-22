@@ -6,11 +6,11 @@ import TimelineItem from "@/components/aboutus/TimelineItem";
 
 export type IHistoryTabProps = { data: IHistoryTab };
 
-const HistoryTab: FC<IHistoryTabProps> = ({ data }) => {
+const HistoryTab: FC<IHistoryTabProps> = (props) => {
   const {
     Tab: { title, description },
     Timeline,
-  } = data;
+  } = props.data;
 
   return (
     <section className="space-y-12">

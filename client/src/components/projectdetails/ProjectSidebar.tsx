@@ -10,8 +10,8 @@ type IProjectSidebarProps = {
   project: IProjectDetail;
 };
 
-const ProjectSidebar: FC<IProjectSidebarProps> = ({ project }) => {
-  const { results, testimonial, tags } = project;
+const ProjectSidebar: FC<IProjectSidebarProps> = (props) => {
+  const { results, testimonial, tags } = props.project;
 
   return (
     <div className="space-y-8 w-3/6">

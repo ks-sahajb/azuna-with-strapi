@@ -9,8 +9,9 @@ import BaseStrapiImage from "@/components/ui/BaseStrapiImage";
 
 type IProjectHeaderProps = { project: IProjectDetail };
 
-const ProjectHeader: FC<IProjectHeaderProps> = ({ project }) => {
-  const { badge, title, tags, hero_image, client, year } = project;
+const ProjectHeader: FC<IProjectHeaderProps> = (props) => {
+  const { badge, title, tags, hero_image, client, year, description } =
+    props.project;
 
   return (
     <section className="relative w-full overflow-hidden bg-gradient-to-br from-cyan-50 via-white to-white py-12 md:py-16">
@@ -30,7 +31,7 @@ const ProjectHeader: FC<IProjectHeaderProps> = ({ project }) => {
             <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl md:text-5xl">
               {title}
             </h1>
-            <p className="text-lg text-gray-600">{project.description}</p>
+            <p className="text-lg text-gray-600">{description}</p>
             <div className="flex flex-wrap gap-2 pt-2">
               {tags.map((tag) => (
                 <span

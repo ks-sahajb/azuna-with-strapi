@@ -6,7 +6,9 @@ import { IIconName, iconLoader } from "@/components/atoms/icons/icons";
 
 export type IIconRendererProps = { name: IIconName; iconProps?: IconProps };
 
-const IconRenderer: FC<IIconRendererProps> = ({ name, iconProps }) => {
+const IconRenderer: FC<IIconRendererProps> = (props) => {
+  const { name, iconProps } = props;
+
   const CurrentIcon = iconLoader[name];
 
   if (!CurrentIcon) {

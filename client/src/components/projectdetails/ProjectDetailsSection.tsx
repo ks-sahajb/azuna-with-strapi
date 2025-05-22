@@ -8,10 +8,8 @@ type IProjectDetailsSectionProps = {
   project: IProjectDetail;
 };
 
-const ProjectDetailsSection: FC<IProjectDetailsSectionProps> = ({
-  project,
-}) => {
-  const { challenge, solution, gallary } = project;
+const ProjectDetailsSection: FC<IProjectDetailsSectionProps> = (porps) => {
+  const { challenge, solution, gallary } = porps.project;
 
   return (
     <section className="w-full bg-white py-12 md:py-16 lg:py-20">
