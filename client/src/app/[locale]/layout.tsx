@@ -3,7 +3,6 @@ import { FC } from "react";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
-import TranslationProvider from "@/app/[locale]/TraslationProvider";
 import i18nConfig from "@/app/i18Config";
 import initTranslations from "@/app/i18n";
 
@@ -11,6 +10,7 @@ import { getCommons } from "@/apis/common";
 
 import Footer from "@/components/common/Footer";
 import Navbar from "@/components/common/Navbar";
+import TranslationProvider from "@/components/common/TraslationProvider";
 
 import "./globals.css";
 
@@ -48,7 +48,6 @@ const RootLayout: FC<IBaseRootLayoutProps> = async (props) => {
   const { data } = await getCommons();
 
   console.log(data);
-  
 
   const { resources } = await initTranslations(locale, i18nNamespaces);
 
