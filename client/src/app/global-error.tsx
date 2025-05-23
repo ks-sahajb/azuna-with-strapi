@@ -4,9 +4,9 @@ import { FC, useEffect } from "react";
 
 import { useRouter } from "next/navigation";
 
-import ErrorState from "@/components/common/ErrorState";
+import "@/app/[locale]/globals.css";
 
-import "./globals.css";
+import ErrorState from "@/components/common/ErrorState";
 
 type IGlobalErrorProps = {
   error: Error & { digest?: string };
@@ -34,7 +34,6 @@ const GlobalError: FC<IGlobalErrorProps> = ({ error, reset }) => {
           sectionProps={{ className: "h-screen" }}
           message={message}
           btnProps={{
-            children: "Try Again",
             onClick: () => reset(),
           }}
         />

@@ -2,6 +2,7 @@
   "importOrder": [
     "^react$",
     "^next(/.*|$)",
+    "^@/app(/.*|$)",
     "^@/apis(/.*|$)",
     "^@/components(/.*|$)",
     "^[./]"

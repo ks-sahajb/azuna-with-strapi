@@ -2,7 +2,10 @@ import { Check, Star, User } from "react-feather";
 
 import { FC } from "react";
 
+import initTranslations from "@/app/i18n";
+
 import { IProjectDetail } from "@/apis/dtos/blocks-component.type";
+import { getLocale } from "@/apis/getLocale";
 
 import BaseStrapiImage from "@/components/ui/BaseStrapiImage";
 
@@ -16,7 +19,11 @@ type IProjectSidebarProps = {
   project: IProjectDetail;
 };
 
-const ProjectSidebar: FC<IProjectSidebarProps> = (props) => {
+const ProjectSidebar: FC<IProjectSidebarProps> = async (props) => {
+  const locale = await getLocale();
+
+  const { t } = await initTranslations(locale, ["common"]);
+
   const { results, testimonial, tags } = props.project;
 
   return (
@@ -24,7 +31,7 @@ const ProjectSidebar: FC<IProjectSidebarProps> = (props) => {
       {/* Results */}
       <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
         <h3 className="text-xl font-bold tracking-tight text-gray-900">
-          Key Results
+          {t("projectDetails.resultHeading", { defaultValue: "Key Results" })}
         </h3>
         <ul className="mt-4 space-y-3">
           {results.map((result) => (
@@ -67,7 +74,9 @@ const ProjectSidebar: FC<IProjectSidebarProps> = (props) => {
       {/* Technologies */}
       <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
         <h3 className="text-xl font-bold tracking-tight text-gray-900">
-          Technologies Used
+          {t("projectDetails.technologyHeading", {
+            defaultValue: "Technologies Used",
+          })}
         </h3>
         <div className="mt-4 flex flex-wrap gap-2">
           {tags.map((tag) => (

@@ -2,7 +2,10 @@ import { ArrowLeft } from "react-feather";
 
 import { FC } from "react";
 
+import initTranslations from "@/app/i18n";
+
 import { IProjectDetail } from "@/apis/dtos/blocks-component.type";
+import { getLocale } from "@/apis/getLocale";
 
 import BaseLink from "@/components/ui/BaseLink";
 import BaseStrapiImage from "@/components/ui/BaseStrapiImage";
@@ -16,7 +19,11 @@ type IProjectHeaderProps = { project: IProjectDetail };
 
 // ======================= Component =====================
 
-const ProjectHeader: FC<IProjectHeaderProps> = (props) => {
+const ProjectHeader: FC<IProjectHeaderProps> = async (props) => {
+  const locale = await getLocale();
+
+  const { t } = await initTranslations(locale, ["common"]);
+
   const { badge, title, tags, hero_image, client, year, description } =
     props.project;
 
@@ -28,7 +35,7 @@ const ProjectHeader: FC<IProjectHeaderProps> = (props) => {
           className="group mb-8 flex items-center text-sm font-medium text-gray-600 transition-colors hover:text-cyan-600"
         >
           <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
-          Back to Projects
+          {t("projectDetails.backBtn", { defaultValue: "Back to Projects" })}
         </BaseLink>
         <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
           <div className="flex flex-col justify-center space-y-4">
@@ -51,11 +58,17 @@ const ProjectHeader: FC<IProjectHeaderProps> = (props) => {
             </div>
             <div className="grid grid-cols-2 gap-4 pt-4">
               <div>
-                <p className="text-sm font-medium text-gray-500">Client</p>
+                <p className="text-sm font-medium text-gray-500">
+                  {t("projectDetails.clientHeading", {
+                    defaultValue: "Client",
+                  })}
+                </p>
                 <p className="text-gray-900">{client}</p>
               </div>
               <div>
-                <p className="text-sm font-medium text-gray-500">Year</p>
+                <p className="text-sm font-medium text-gray-500">
+                  {t("projectDetails.yearHeading", { defaultValue: "Year" })}
+                </p>
                 <p className="text-gray-900">{year}</p>
               </div>
             </div>

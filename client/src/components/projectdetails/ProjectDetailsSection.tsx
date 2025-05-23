@@ -1,6 +1,9 @@
 import { FC } from "react";
 
+import initTranslations from "@/app/i18n";
+
 import { IProjectDetail } from "@/apis/dtos/blocks-component.type";
+import { getLocale } from "@/apis/getLocale";
 
 import BaseStrapiImage from "@/components/ui/BaseStrapiImage";
 
@@ -14,7 +17,13 @@ type IProjectDetailsSectionProps = {
   project: IProjectDetail;
 };
 
-const ProjectDetailsSection: FC<IProjectDetailsSectionProps> = (porps) => {
+const ProjectDetailsSection: FC<IProjectDetailsSectionProps> = async (
+  porps,
+) => {
+  const locale = await getLocale();
+
+  const { t } = await initTranslations(locale, ["common"]);
+
   const { challenge, solution, gallary } = porps.project;
 
   return (
@@ -26,13 +35,17 @@ const ProjectDetailsSection: FC<IProjectDetailsSectionProps> = (porps) => {
             <div className="space-y-8">
               <div className="space-y-4">
                 <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
-                  The Challenge
+                  {t("projectDetails.challangeHeading", {
+                    defaultValue: "The Challenge",
+                  })}
                 </h2>
                 <p className="text-gray-600">{challenge}</p>
               </div>
               <div className="space-y-4">
                 <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
-                  Our Solution
+                  {t("projectDetails.solutionHeading", {
+                    defaultValue: "Our Solution",
+                  })}
                 </h2>
                 <p className="text-gray-600">{solution}</p>
               </div>
@@ -40,7 +53,9 @@ const ProjectDetailsSection: FC<IProjectDetailsSectionProps> = (porps) => {
             {/* Gallery */}
             <div className="mt-12 space-y-6">
               <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
-                Project Gallery
+                {t("projectDetails.galleryHeading", {
+                  defaultValue: "Project Gallery",
+                })}
               </h2>
               <div className="grid gap-4 sm:grid-cols-2">
                 {gallary.map((image) => (

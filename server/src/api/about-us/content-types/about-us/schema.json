@@ -10,6 +10,11 @@
   "options": {
     "draftAndPublish": true
   },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "blocks": {
       "type": "dynamiczone",
@@ -18,7 +23,12 @@
         "blocks.misson-tab",
         "blocks.team-tab",
         "blocks.history-tab"
-      ]
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
