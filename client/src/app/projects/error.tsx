@@ -1,16 +1,14 @@
 "use client";
 
-import { useEffect } from "react";
+import { IErrorProps } from "@/app/error";
+
+import { FC, useEffect } from "react";
 
 import ErrorState from "@/components/common/ErrorState";
 
-export default function Error({
-  error,
-  reset,
-}: {
-  error: Error & { digest?: string };
-  reset: () => void;
-}) {
+const Error: FC<IErrorProps> = (props) => {
+  const { error, reset } = props;
+
   useEffect(() => {
     console.error(error);
   }, [error]);
@@ -21,4 +19,6 @@ export default function Error({
       btnProps={{ children: "Try Again", onClick: () => reset() }}
     />
   );
-}
+};
+
+export default Error;
