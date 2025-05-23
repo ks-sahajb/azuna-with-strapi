@@ -1,0 +1,17 @@
+{
+  "contactHeadings": {
+    "mobile": "Mobile",
+    "email": "Email",
+    "location": "Location"
+  },
+  "projectDetails": {
+    "backBtn": "Back to Projects",
+    "clientHeading": "Client",
+    "yearHeading": "Year",
+    "challangeHeading": "The Challenge",
+    "solutionHeading": "Our Solution",
+    "galleryHeading": "Project Gallery",
+    "resultHeading": "Key Results",
+    "technologyHeading": "Technologies Used"
+  }
+}

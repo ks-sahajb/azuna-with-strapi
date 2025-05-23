@@ -2,7 +2,10 @@ import { Mail, MapPin, PhoneCall } from "react-feather";
 
 import { FC } from "react";
 
+import initTranslations from "@/app/i18n";
+
 import { ICTASection } from "@/apis/dtos/blocks-component.type";
+import { getLocale } from "@/apis/getLocale";
 
 export type ICtaSectionProps = { data: ICTASection };
 
@@ -12,7 +15,11 @@ export type ICtaSectionProps = { data: ICTASection };
  * Renders a call-to-action section with contact information (phone, email, location).
  */
 
-const CtaSection: FC<ICtaSectionProps> = (props) => {
+const CtaSection: FC<ICtaSectionProps> = async (props) => {
+  const locale = await getLocale();
+
+  const { t } = await initTranslations(locale, ["common"]);
+
   const { badge, title, description, contact } = props.data;
 
   return (
@@ -36,7 +43,9 @@ const CtaSection: FC<ICtaSectionProps> = (props) => {
                   <PhoneCall size={19} />
                 </div>
                 <div className="ml-4">
-                  <p className="font-medium text-gray-900">Phone</p>
+                  <p className="font-medium text-gray-900">
+                    {t("contactHeadings.mobile", { defaultValue: "Mobile" })}
+                  </p>
                   <p className="text-gray-600">{contact.mobile}</p>
                 </div>
               </div>
@@ -46,7 +55,9 @@ const CtaSection: FC<ICtaSectionProps> = (props) => {
                   <Mail size={19} />
                 </div>
                 <div className="ml-4">
-                  <p className="font-medium text-gray-900">Email</p>
+                  <p className="font-medium text-gray-900">
+                    {t("contactHeadings.email", { defaultValue: "Email" })}
+                  </p>
                   <p className="text-gray-600">{contact.email}</p>
                 </div>
               </div>
@@ -56,7 +67,11 @@ const CtaSection: FC<ICtaSectionProps> = (props) => {
                   <MapPin size={19} />
                 </div>
                 <div className="ml-4">
-                  <p className="font-medium text-gray-900">Location</p>
+                  <p className="font-medium text-gray-900">
+                    {t("contactHeadings.location", {
+                      defaultValue: "Location",
+                    })}
+                  </p>
                   <p className="text-gray-600">{contact.address}</p>
                 </div>
               </div>
