@@ -47,8 +47,6 @@ const RootLayout: FC<IBaseRootLayoutProps> = async (props) => {
 
   const { data } = await getCommons();
 
-  console.log(data);
-
   const { resources } = await initTranslations(locale, i18nNamespaces);
 
   return (

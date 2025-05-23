@@ -18,14 +18,20 @@ export const middleware = (request: NextRequest) => {
       defaultLocale: language,
     });
 
-    response.headers.set("x-locale", locale);
+    const currentLocale =
+      locale && i18nConfig.locales.includes(locale) ? locale : language;
+
+    response.headers.set("x-locale", currentLocale);
 
     return response;
   }
 
   const response = i18nRouter(request, i18nConfig);
 
-  response.headers.set("x-locale", locale);
+  response.headers.set(
+    "x-locale",
+    i18nConfig.locales.includes(locale) ? locale : i18nConfig.defaultLocale,
+  );
   return response;
 };
 
