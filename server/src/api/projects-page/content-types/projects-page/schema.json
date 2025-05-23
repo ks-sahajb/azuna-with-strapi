@@ -10,13 +10,23 @@
   "options": {
     "draftAndPublish": true
   },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "blocks": {
       "type": "dynamiczone",
       "components": [
         "blocks.hero-section",
         "blocks.project-section"
-      ]
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
