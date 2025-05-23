@@ -31,18 +31,13 @@ export class FetchAPIClient {
         queryString ? `?${queryString}` : ""
       }`;
 
-      const response = await fetch(requestUrl, mergedOptions);
-
-      if (!response.ok) {
-        throw new Error(`API request failed with status ${response.status}`);
-      }
+      let response = await fetch(requestUrl, mergedOptions);
 
       const data: IApiResponse<T> = await response.json();
+
       return data;
     } catch (error) {
-      throw new Error(
-        `Please check if your server is running and you set all the required tokens.`,
-      );
+      throw error;
     }
   }
 }
