@@ -18,9 +18,9 @@ export type IProjectCardProps = IProjectCard;
 const ProjectCard: FC<IProjectCardProps> = (props) => {
   const { image, badge, button, description, title, tags } = props;
   return (
-    <div className="group relative overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
+    <div className="group relative overflow-hidden rounded-xl border flex flex-col border-gray-200 bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
       {/* Project image and tags */}
-      <div className="relative aspect-video overflow-hidden">
+      <div className="relative aspect-video overflow-hidden shrink-0">
         {image && (
           <BaseStrapiImage
             {...image}
@@ -47,12 +47,14 @@ const ProjectCard: FC<IProjectCardProps> = (props) => {
         </div>
       </div>
       {/* Project details */}
-      <div className="p-6">
-        <span className="mb-2 inline-block text-sm font-medium text-cyan-600">
-          {badge.text}
-        </span>
-        <h3 className="mb-2 text-xl font-bold text-gray-900">{title}</h3>
-        <p className="mb-4 text-gray-600">{description}</p>
+      <div className="p-6 flex flex-col h-full justify-between">
+        <div>
+          <span className="mb-2 inline-block text-sm font-medium text-cyan-600">
+            {badge.text}
+          </span>
+          <h3 className="mb-2 text-xl font-bold text-gray-900">{title}</h3>
+          <p className="mb-4 text-gray-600">{description}</p>
+        </div>
         <BaseLink
           href={button.href}
           className="inline-flex items-center text-sm font-medium text-cyan-600 transition-colors hover:text-cyan-700"
