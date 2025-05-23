@@ -2,6 +2,7 @@ import qs from "qs";
 
 import { getStrapiURL } from "@/apis/api-helper";
 import { IApiResponse } from "@/apis/dtos/common.type";
+import { getLocale } from "@/apis/getLocale";
 
 export class FetchAPIClient {
   private baseHeaders = {
@@ -16,7 +17,9 @@ export class FetchAPIClient {
 
   async get<T>(path: string, urlParamsObject = {}, options: RequestInit = {}) {
     try {
-      const mergedOptions = {
+      const locale = await getLocale();
+
+      const mergedOptions: RequestInit = {
         next: { revalidate: 60 },
         headers: {
           ...this.baseHeaders,
@@ -29,7 +32,7 @@ export class FetchAPIClient {
 
       const requestUrl = `${getStrapiURL(`${this.basePath}${path}`)}${
         queryString ? `?${queryString}` : ""
-      }`;
+      }&locale=${locale}`;
 
       let response = await fetch(requestUrl, mergedOptions);
 
