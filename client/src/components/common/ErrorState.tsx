@@ -1,5 +1,6 @@
 import NotFoundSVG from "@/../public/pagenotfound.svg";
 import clsx from "clsx";
+import { useTranslation } from "react-i18next";
 
 import React, { ButtonHTMLAttributes, FC, HTMLAttributes } from "react";
 
@@ -19,6 +20,8 @@ type IErrorStateProps = {
 const ErrorState: FC<IErrorStateProps> = (props) => {
   const { message, btnProps, sectionProps } = props;
 
+  const { t } = useTranslation("common");
+
   return (
     <section
       {...sectionProps}
@@ -35,7 +38,7 @@ const ErrorState: FC<IErrorStateProps> = (props) => {
         className="mb-20 drop-shadow-lg"
       />
       <h1 className="text-4xl font-extrabold tracking-tight text-cyan-700 sm:text-5xl mb-4 text-center">
-        Oops! Some Error Occurred
+        {t("errorPage.heading", { defaultValue: "Oops! Some Error Occurred" })}
       </h1>
       <p className="text-lg text-cyan-600 mb-8 text-center max-w-md">
         {message || "Page Not Found"}
@@ -48,7 +51,9 @@ const ErrorState: FC<IErrorStateProps> = (props) => {
           )}
           {...btnProps}
         >
-          {btnProps.children}
+          {btnProps.children
+            ? btnProps.children
+            : t("errorPage.btnText", { defaultValue: "Try Again" })}
         </button>
       )}
     </section>

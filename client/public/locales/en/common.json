@@ -13,5 +13,9 @@
     "galleryHeading": "Project Gallery",
     "resultHeading": "Key Results",
     "technologyHeading": "Technologies Used"
+  },
+  "errorPage": {
+    "heading": "Oops! Some Error Occurred",
+    "btnText": "Try Again"
   }
 }

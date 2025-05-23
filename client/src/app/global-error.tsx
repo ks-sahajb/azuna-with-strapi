@@ -34,7 +34,6 @@ const GlobalError: FC<IGlobalErrorProps> = ({ error, reset }) => {
           sectionProps={{ className: "h-screen" }}
           message={message}
           btnProps={{
-            children: "Try Again",
             onClick: () => reset(),
           }}
         />

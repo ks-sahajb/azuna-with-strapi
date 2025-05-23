@@ -13,5 +13,9 @@
     "galleryHeading": "Galería del Proyecto",
     "resultHeading": "Resultados Clave",
     "technologyHeading": "Tecnologías Utilizadas"
+  },
+  "errorPage": {
+    "heading": "¡Vaya! Ocurrió un error",
+    "btnText": "Intentar de nuevo"
   }
 }

@@ -1,8 +1,8 @@
 "use client";
 
-import { IErrorProps } from "@/app/[locale]/error";
-
 import { FC, useEffect } from "react";
+
+import { IErrorProps } from "@/app/[locale]/error";
 
 import ErrorState from "@/components/common/ErrorState";
 
@@ -14,10 +14,7 @@ const Error: FC<IErrorProps> = (props) => {
   }, [error]);
 
   return (
-    <ErrorState
-      message={error.message}
-      btnProps={{ children: "Try Again", onClick: () => reset() }}
-    />
+    <ErrorState message={error.message} btnProps={{ onClick: () => reset() }} />
   );
 };
 

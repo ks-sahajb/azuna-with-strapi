@@ -1,5 +1,7 @@
 "use client";
 
+import { useTranslation } from "react-i18next";
+
 import { FC, useEffect } from "react";
 
 import { IErrorProps } from "@/app/[locale]/error";
@@ -14,10 +16,7 @@ const Error: FC<IErrorProps> = (props) => {
   }, [error]);
 
   return (
-    <ErrorState
-      message={error.message}
-      btnProps={{ children: "Try Again", onClick: () => reset() }}
-    />
+    <ErrorState message={error.message} btnProps={{ onClick: () => reset() }} />
   );
 };
 
