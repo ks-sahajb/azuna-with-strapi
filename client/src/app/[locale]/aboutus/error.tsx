@@ -1,8 +1,8 @@
 "use client";
 
-import { IErrorProps } from "@/app/error";
-
 import { FC, useEffect } from "react";
+
+import { IErrorProps } from "@/app/[locale]/error";
 
 import ErrorState from "@/components/common/ErrorState";
 
